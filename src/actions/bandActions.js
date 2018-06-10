@@ -1,13 +1,26 @@
 import { FETCH_BANDS, NEW_BAND } from './types'
 
-export const fetchBands = (dispatch) => {
-  return function(dispatch) {
-    console.log("fetching bands");
-    fetch('http://localhost:3000/api/v1/bands')
-    .then(res => res.json())
-    .then(bands => dispatch({
-      type: FETCH_BANDS,
-      payload: bands
-    }))
-  }
+export const fetchBands = () => (dispatch) => {
+  fetch('http://localhost:3000/api/v1/bands')
+  .then(res => res.json())
+  .then(bands => dispatch({
+    type: FETCH_BANDS,
+    payload: bands
+  }))
+}
+
+export const createBand = (bandData) => (dispatch) => {
+  console.log('post action')
+  fetch('http://localhost:3000/api/v1/bands',{
+    method:'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(bandData)
+  })
+  .then(res => res.json())
+  .then(band => dispatch({
+    type: NEW_BAND,
+    payload: band
+  }))
 }

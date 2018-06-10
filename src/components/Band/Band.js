@@ -3,6 +3,7 @@ import BandContainer from '../../containers/Band/BandContainer'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchBands } from '../../actions/bandActions';
+import CreateBand from './CreateBand';
 import Filter from './Filter';
 
 class Band extends React.Component {
@@ -17,6 +18,14 @@ class Band extends React.Component {
     this.props.fetchBands();
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log("nextProps", nextProps.newBand)
+    if(nextProps.newBand) {
+      this.props.bands.push(nextProps.newBand)
+      // this.props.fetchBands()
+    }
+  }
+
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
@@ -24,18 +33,23 @@ class Band extends React.Component {
 
   showBands = () => {
     let filtered = [...this.props.bands];
-    filtered = filtered.filter(band => (
-      band.name.toLowerCase().includes(this.state.name.toLowerCase()) &&
-      band.location.toLowerCase().includes(this.state.location.toLowerCase()) &&
-      band.genre.toLowerCase().includes(this.state.genre.toLowerCase())
-    ))
-    return filtered.map(band => <BandContainer key={band.id} band={band} />)
+    if( this.state.name || this.state.genre || this.state.location) {
+      filtered = filtered.filter(band => (
+        ( band.name && band.name.toLowerCase().includes(this.state.name.toLowerCase())) &&
+        ( band.location && band.location.toLowerCase().includes(this.state.location.toLowerCase()) ) &&
+        ( band.genre && band.genre.toLowerCase().includes(this.state.genre.toLowerCase()) )
+      ))
+    }
+
+    return filtered.map(band => (<div key={band.id}><BandContainer band={band} /></div>))
   }
 
   render() {
-    console.log(this.props.bands)
+    console.log("all", this.props.bands)
+    console.log('new', this.props.newBand)
     return (
       <div>
+        <CreateBand />
         <Filter filter={this.handleChange}/>
         {this.showBands()}
       </div>
@@ -45,10 +59,12 @@ class Band extends React.Component {
 
 Band.propTypes = {
   fetchBands: PropTypes.func.isRequired,
-  bands: PropTypes.array.isRequired
+  bands: PropTypes.array.isRequired,
+  newBand: PropTypes.object 
 }
 const mapStateToProps = state => ({
-  bands: state.bands.bands
+  bands: state.bands.bands,
+  newBand: state.bands.band
 })
 
 export default connect(mapStateToProps, { fetchBands })(Band);
