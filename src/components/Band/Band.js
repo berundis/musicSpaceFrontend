@@ -22,7 +22,6 @@ class Band extends React.Component {
     console.log("nextProps", nextProps.newBand)
     if(nextProps.newBand) {
       this.props.bands.push(nextProps.newBand)
-      // this.props.fetchBands()
     }
   }
 
@@ -40,6 +39,7 @@ class Band extends React.Component {
         ( band.genre && band.genre.toLowerCase().includes(this.state.genre.toLowerCase()) )
       ))
     }
+    console.log(filtered)
 
     return filtered.map(band => (<div key={band.id}><BandContainer band={band} /></div>))
   }
@@ -62,6 +62,7 @@ Band.propTypes = {
   bands: PropTypes.array.isRequired,
   newBand: PropTypes.object 
 }
+
 const mapStateToProps = state => ({
   bands: state.bands.bands,
   newBand: state.bands.band
