@@ -19,7 +19,6 @@ class Band extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("nextProps", nextProps.newBand)
     if(nextProps.newBand) {
       this.props.bands.push(nextProps.newBand)
     }
@@ -39,14 +38,10 @@ class Band extends React.Component {
         ( band.genre && band.genre.toLowerCase().includes(this.state.genre.toLowerCase()) )
       ))
     }
-    console.log(filtered)
-
     return filtered.map(band => (<div key={band.id}><BandContainer band={band} /></div>))
   }
 
   render() {
-    console.log("all", this.props.bands)
-    console.log('new', this.props.newBand)
     return (
       <div>
         <CreateBand />
