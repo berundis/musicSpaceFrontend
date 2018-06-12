@@ -3,7 +3,6 @@ import BandContainer from '../../containers/Band/BandContainer'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchBands } from '../../actions/bandActions';
-import CreateBand from './CreateBand';
 import Filter from './Filter';
 
 class Band extends React.Component {
@@ -44,7 +43,6 @@ class Band extends React.Component {
   render() {
     return (
       <div>
-        <CreateBand />
         <Filter filter={this.handleChange}/>
         {this.showBands()}
       </div>

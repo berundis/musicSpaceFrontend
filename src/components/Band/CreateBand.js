@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createBand } from '../../actions/bandActions';
 import PropTypes from 'prop-types';
+import { Redirect} from 'react-router-dom'
 
 class CreateBand extends React.Component {
   state = {
@@ -11,7 +12,8 @@ class CreateBand extends React.Component {
     location: '',
     genre: '',
     bio: '',
-    profile_img: ''
+    profile_img: '',
+    done: false
   }
 
   handleChange = (e) => {
@@ -30,16 +32,20 @@ class CreateBand extends React.Component {
       profile_img: this.state.profile_img
     }
 
-    this.setState({
-      email: '', password: '', name: '', location: '', genre: '', bio: '', profile_img: ''
-    })
     this.props.createBand(newBand);
+
+    this.setState({
+      done: true
+    })
   } 
   render() {
+    if (this.state.done) {
+      return <Redirect to="/login"/>
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h3>Create an Account:</h3>
+          <h3>Create A Band Account:</h3>
           <h4>Email:</h4>
           <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
           <h4>Password:</h4>

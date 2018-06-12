@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BandContainer = (props) => (
+const ProfileContainer = (props) => (
     <div>
         <br/>
         <img alt={props.name} src={props.band.profile_img}/>
@@ -12,4 +12,4 @@ const BandContainer = (props) => (
     </div>
 )
 
-export default BandContainer
+export default ProfileContainer
