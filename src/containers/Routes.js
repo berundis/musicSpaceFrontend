@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import CreateBand from '../components/Band/CreateBand';
@@ -8,6 +8,7 @@ import Band from '../components/Band/Band';
 import BandProfile from '../components/Band/Profile';
 import Venue from '../components/Venue/Venue';
 import VenueProfile from '../components/Venue/Profile';
+import AllRoutes from './AllRoutes';
 
 class Routes extends React.Component {
   getRoutes = () => {
@@ -15,9 +16,9 @@ class Routes extends React.Component {
       return (
         <div>
         <Route path="/bands" exact component={Band} />
-        <Route path='/band' render={(props) => <BandProfile {...props} /> } />
+        <Route path='/band' exact render={(props) => <BandProfile {...props} /> } />
         <Route path="/venues" exact component={Venue} /> 
-        <Route path="/venue" render={(props) => <VenueProfile {...props} /> } />
+        <Route path="/venue" exact render={(props) => <VenueProfile {...props} /> } />
         </div>
       )
     } else {
@@ -52,15 +53,17 @@ class Routes extends React.Component {
 
   render() {
     return (
-      <div>
+      <div>   
         <Route path="/" exact component={Home} />
         <Route path="/login" render={(props) => <Login onSubmit={this.login} {...props} />} />
         <Route path="/bandregister" render={(props) => <CreateBand {...props} />} />
         <Route path="/venueregister" render={(props) => <CreateVenue {...props} />} />
         {this.getRoutes()}
+        <AllRoutes />  
       </div>
     )
   }
 }
 
-export default Routes 
+
+export default Routes;

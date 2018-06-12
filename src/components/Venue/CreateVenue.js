@@ -49,7 +49,7 @@ class CreateVenue extends React.Component {
           <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
           <h4>Password:</h4>
           <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-          <h4>Band Name:</h4>
+          <h4>Venue Name:</h4>
           <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
           <h4>Genres:</h4>
           <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>

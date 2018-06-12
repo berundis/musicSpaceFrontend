@@ -17,12 +17,6 @@ class Band extends React.Component {
     this.props.fetchBands();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.newBand) {
-      this.props.bands.push(nextProps.newBand)
-    }
-  }
-
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
@@ -53,12 +47,10 @@ class Band extends React.Component {
 Band.propTypes = {
   fetchBands: PropTypes.func.isRequired,
   bands: PropTypes.array.isRequired,
-  newBand: PropTypes.object 
 }
 
 const mapStateToProps = state => ({
-  bands: state.bands.bands,
-  newBand: state.bands.band
+  bands: state.bands.bands
 })
 
 export default connect(mapStateToProps, { fetchBands })(Band);
