@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import CreateBand from '../components/Band/CreateBand';
@@ -9,7 +9,7 @@ import BandProfile from '../components/Band/Profile';
 import Venue from '../components/Venue/Venue';
 import VenueProfile from '../components/Venue/Profile';
 
-export default class Routes extends React.Component {
+class Routes extends React.Component {
   getRoutes = () => {
     if (localStorage.getItem('token')) {
       return (
@@ -21,7 +21,7 @@ export default class Routes extends React.Component {
         </div>
       )
     } else {
-      return null
+      return <Redirect to="/" />
     }
   } 
 
@@ -49,7 +49,7 @@ export default class Routes extends React.Component {
       }   
     })
   }
-  
+
   render() {
     return (
       <div>
@@ -62,3 +62,5 @@ export default class Routes extends React.Component {
     )
   }
 }
+
+export default Routes 
