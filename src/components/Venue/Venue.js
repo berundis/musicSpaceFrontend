@@ -17,12 +17,6 @@ class Venue extends React.Component {
     this.props.fetchVenues();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.newVenue) {
-      this.props.venues.push(nextProps.newVenue)
-    }
-  }
-
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
@@ -57,7 +51,6 @@ Venue.propTypes = {
 
 const mapStateToProps = state => ({
   venues: state.venues.venues, 
-  newVenue: state.venues.venue 
 })
 
 export default connect(mapStateToProps, { fetchVenues })(Venue);

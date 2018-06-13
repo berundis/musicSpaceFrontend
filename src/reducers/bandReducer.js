@@ -1,4 +1,4 @@
-import { FETCH_BANDS, NEW_BAND} from '../actions/types';
+import { FETCH_BANDS, NEW_BAND, EDIT_BAND} from '../actions/types';
 
 const initialState = {
   bands: [],
@@ -13,6 +13,11 @@ export default function(state = initialState, action) {
         bands: action.payload
       }
     case NEW_BAND:
+      return {
+        ...state,
+        band: action.payload
+      }
+    case EDIT_BAND:
       return {
         ...state,
         band: action.payload

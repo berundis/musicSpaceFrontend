@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import CreateBand from '../components/Band/CreateBand';
@@ -9,6 +9,7 @@ import BandProfile from '../components/Band/Profile';
 import Venue from '../components/Venue/Venue';
 import VenueProfile from '../components/Venue/Profile';
 import AllRoutes from './AllRoutes';
+import EditBand from '../components/Band/EditBand';
 
 class Routes extends React.Component {
   getRoutes = () => {
@@ -51,6 +52,16 @@ class Routes extends React.Component {
     })
   }
 
+  editDeleteRoutes = () => {
+    if (localStorage.getItem('token') && localStorage.getItem('profile_type') === 'band') {
+      return  <Route path="/band/edit" render={(props) => <EditBand {...props} bandId={localStorage.getItem('user_id')}/>}  />
+    // } else if (localStorage.getItem('token') && localStorage.getItem('profile_type') === 'venue') {
+    //    <Route path="/venue/edit" render={(props) => <EditVenue {...props} venueId={localStorage.getItem('user_id')}/>}  />
+    } else {
+      return null 
+    }
+  }
+
   render() {
     return (
       <div>   
@@ -59,6 +70,7 @@ class Routes extends React.Component {
         <Route path="/bandregister" render={(props) => <CreateBand {...props} />} />
         <Route path="/venueregister" render={(props) => <CreateVenue {...props} />} />
         {this.getRoutes()}
+        {this.editDeleteRoutes()}
         <AllRoutes />  
       </div>
     )

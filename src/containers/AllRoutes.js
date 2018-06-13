@@ -18,15 +18,18 @@ class AllRoutes extends React.Component {
     console.log("RENDER PROPS", renderProps)
     const bandId = renderProps.match.params.bandId
     const band = this.props.bands.find((band) => band.id == bandId)
-    if (band)
+    if (band) {
       return <BandProfileContainer band={ band } />
-    else
+    } else {
       return null 
+    }
+      
   }
 
   renderVenue = (renderProps) => {
     const venueId = renderProps.match.params.venueId
     const venue = this.props.venues.find((venue) => venue.id == venueId)
+    console.log("RENDER VENUE PROFILE")
     if (venue)
       return <VenueProfileContainer venue={ venue } />
     else
@@ -37,8 +40,8 @@ class AllRoutes extends React.Component {
      if(this.props.bands && this.props.venues) {
        return (
           <div>
-            <Route path="/bands/:bandId" render={ this.renderBand } />
-            <Route path="/venues/:venueId" render={ this.renderVenue } /> 
+            <Route path="/bands/:bandId" exact render={ this.renderBand } />
+            <Route path="/venues/:venueId" exact render={ this.renderVenue } /> 
           </div>
        )
      } else {

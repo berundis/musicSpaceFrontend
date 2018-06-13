@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProfileContainer from '../../containers/Band/ProfileContainer';
+import {Link} from 'react-router-dom';
 
 export default class Profile extends Component {
 
@@ -33,6 +34,7 @@ export default class Profile extends Component {
     return (
       <div>
         <ProfileContainer band={this.state.band} />
+        <Link to={`/band/edit`}>EDIT</Link>
       </div>
     )
   }
