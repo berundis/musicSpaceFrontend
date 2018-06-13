@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ProfileContainer from '../../containers/Band/ProfileContainer';
-import {Link} from 'react-router-dom';
+import { deleteBand } from '../../actions/bandActions'
 
-export default class Profile extends Component {
+
+class Profile extends Component {
 
   state = {
-    band: {}
+    band: {},
+    delete: false
   }
 
   componentDidMount() {
@@ -30,13 +35,35 @@ export default class Profile extends Component {
       this.props.history.push("/login")
     }
   }
+
+  deleteProfile = () => {
+    console.log("HEY DELTE")
+    this.props.deleteBand(this.state.band.id) 
+    localStorage.removeItem('token')
+    localStorage.removeItem('user_id')
+    localStorage.removeItem('profile_type')
+    this.setState({delete: true})
+  }
+
   render() {
+    if(this.state.delete){
+      return <Redirect to="/" />
+    }
     return (
       <div>
         <ProfileContainer band={this.state.band} />
         <Link to={`/band/edit`}>EDIT</Link>
+        <br /> <br />
+        <button onClick={this.deleteProfile}>Delete Profile</button>
       </div>
     )
   }
 }
+
+Profile.propTypes = {
+  deleteBand: PropTypes.func.isRequired
+}
+
+export default connect(null, { deleteBand })(Profile);
+
 

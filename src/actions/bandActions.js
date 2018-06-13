@@ -1,4 +1,4 @@
-import { FETCH_BANDS, NEW_BAND, EDIT_BAND } from './types'
+import { FETCH_BANDS, NEW_BAND, EDIT_BAND, DELETE_BAND } from './types'
 
 export const fetchBands = () => (dispatch) => {
   fetch('http://localhost:3000/api/v1/bands')
@@ -40,3 +40,15 @@ export const editBand = (bandData) => (dispatch) => {
   }))
 }
 
+export const deleteBand = (id) => (dispatch) =>{
+  fetch( `http://localhost:3000/api/v1/bands/${id}`,{
+    method: 'DELETE',
+  })
+  .then(res => res.json())
+  .then(band => {
+    console.log("BAND TO DELETE", band)
+    return dispatch({
+      type: DELETE_BAND,
+      payload: id
+  })})
+}
