@@ -4,13 +4,17 @@ import { connect } from 'react-redux';
 import { fetchVenues } from '../../actions/venueActions';
 import Filter from './Filter';
 import VenueContainer from '../../containers/Venue/VenueContainer';
+import ProfileContainer from '../../containers/Venue/ProfileContainer';
 
+let past 
 class Venue extends React.Component {
 
   state = {
     genre: '', 
     location: '', 
-    name: ''
+    name: '', 
+    clicked: false,
+    venue: ''
   }
 
   componentDidMount() {
@@ -19,6 +23,12 @@ class Venue extends React.Component {
 
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleClick = (venue) => {
+    past = this.state.clicked
+    this.setState({clicked: !this.state.clicked})
+    this.setState({venue: venue})
   }
 
   showVenues = () => {
@@ -30,14 +40,27 @@ class Venue extends React.Component {
         ( venue.genres && (venue.genres.toLowerCase().includes(this.state.genre.toLowerCase() )|| venue.genres.includes("all")) )
       ))
     }
-    return filtered.map(venue => (<div key={venue.id}><VenueContainer venue={venue} /></div>))
+    return filtered.map(venue => (<div key={venue.id}><VenueContainer venue={venue} handleClick={this.handleClick}/></div>))
   }
-
+  
+  handleProfile = () => {
+    if (this.state.clicked !== past) {
+      past = this.state.clicked
+      console.log("HANDLE PROFILE", past, this.state.clicked)
+      return <ProfileContainer venue={this.state.venue}/>
+    }else {
+      return (
+        <div>
+          <Filter filter={this.handleChange} /> 
+          {this.showVenues()}
+        </div>
+      )
+    }
+  }
   render() {
     return (
       <div>
-        <Filter filter={this.handleChange} /> 
-        {this.showVenues()}
+        {this.handleProfile()}
       </div>
     )
   }

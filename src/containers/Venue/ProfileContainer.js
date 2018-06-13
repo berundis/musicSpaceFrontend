@@ -4,7 +4,7 @@ const ProfileContainer = (props) => (
     <div>
         <br/>
         {console.log("IN PROFILE")}
-        <img alt={props.name} src={props.venue.profile_img}/>
+        <img alt={props.venue.name} src={props.venue.profile_img}/>
         <h1>{props.venue.name}</h1>
         <h3>Location: {props.venue.location}</h3>
         <h3>Genres: {props.venue.genres}</h3>
