@@ -1,16 +1,20 @@
-import React from 'react'
-import BandContainer from '../../containers/Band/BandContainer'
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchBands } from '../../actions/bandActions';
 import Filter from './Filter';
+import ProfileContainer from '../../containers/Band/ProfileContainer';
+import BandContainer from '../../containers/Band/BandContainer';
 
+let past
 class Band extends React.Component {
 
   state = {
     genre: '',
     location: '',
-    name: ''
+    name: '',
+    clicked: false,
+    band: ''
   }
 
   componentDidMount() {
@@ -21,6 +25,11 @@ class Band extends React.Component {
     this.setState({[e.target.name]: e.target.value})
   }
 
+  handleClick = (band) => {
+    past = this.state.clicked
+    this.setState({clicked: !this.state.clicked})
+    this.setState({band: band})
+  }
 
   showBands = () => {
     let filtered = [...this.props.bands];
@@ -31,14 +40,27 @@ class Band extends React.Component {
         ( band.genre && band.genre.toLowerCase().includes(this.state.genre.toLowerCase()) )
       ))
     }
-    return filtered.map(band => (<div key={band.id}><BandContainer band={band} /></div>))
+    return filtered.map(band => (<div key={band.id}><BandContainer band={band} handleClick={this.handleClick}/></div>))
+  }
+
+  handleProfile = () => {
+    if (this.state.clicked !== past) {
+      past = this.state.clicked
+      return <ProfileContainer band={this.state.band}/>
+    }else {
+      return (
+        <div>
+          <Filter filter={this.handleChange} /> 
+          {this.showBands()}
+        </div>
+      )
+    }
   }
 
   render() {
     return (
       <div>
-        <Filter filter={this.handleChange}/>
-        {this.showBands()}
+        {this.handleProfile()}
       </div>
     )
   }

@@ -37,7 +37,7 @@ class Venue extends React.Component {
       filtered = filtered.filter(venue => (
         ( venue.name && venue.name.toLowerCase().includes(this.state.name.toLowerCase())) &&
         ( venue.location && venue.location.toLowerCase().includes(this.state.location.toLowerCase()) ) &&
-        ( venue.genres && (venue.genres.toLowerCase().includes(this.state.genre.toLowerCase() )|| venue.genres.includes("all")) )
+        ( venue.genres && (venue.genres.toLowerCase().includes(this.state.genres.toLowerCase() )|| venue.genres.includes("all")) )
       ))
     }
     return filtered.map(venue => (<div key={venue.id}><VenueContainer venue={venue} handleClick={this.handleClick}/></div>))
@@ -46,7 +46,6 @@ class Venue extends React.Component {
   handleProfile = () => {
     if (this.state.clicked !== past) {
       past = this.state.clicked
-      console.log("HANDLE PROFILE", past, this.state.clicked)
       return <ProfileContainer venue={this.state.venue}/>
     }else {
       return (
@@ -69,7 +68,6 @@ class Venue extends React.Component {
 Venue.propTypes = {
   fetchVenues: PropTypes.func.isRequired,
   venues: PropTypes.array.isRequired,
-  newVenue: PropTypes.object 
 }
 
 const mapStateToProps = state => ({
