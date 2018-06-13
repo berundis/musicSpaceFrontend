@@ -15,7 +15,6 @@ class AllRoutes extends React.Component {
   }
 
   renderBand = (renderProps) => {
-    console.log("RENDER PROPS", renderProps)
     const bandId = renderProps.match.params.bandId
     const band = this.props.bands.find((band) => band.id == bandId)
     if (band) {
@@ -29,7 +28,6 @@ class AllRoutes extends React.Component {
   renderVenue = (renderProps) => {
     const venueId = renderProps.match.params.venueId
     const venue = this.props.venues.find((venue) => venue.id == venueId)
-    console.log("RENDER VENUE PROFILE")
     if (venue)
       return <VenueProfileContainer venue={ venue } />
     else

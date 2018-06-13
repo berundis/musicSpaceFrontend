@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ProfileContainer from '../../containers/Venue/ProfileContainer';
 
 export default class Profile extends Component {
@@ -33,6 +34,7 @@ export default class Profile extends Component {
     return (
       <div>
         <ProfileContainer venue={this.state.venue} />
+        <Link to={`/venue/edit`}>EDIT</Link>
       </div>
     )
   }

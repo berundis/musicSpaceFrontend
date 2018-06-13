@@ -2,7 +2,6 @@ import React from 'react'
 
 const ProfileContainer = (props) => (
   <div>
-    {console.log("Profile", props)}
     <br/>
     <img alt={props.name} src={props.band.profile_img}/>
     <h1>{props.band.name}</h1>

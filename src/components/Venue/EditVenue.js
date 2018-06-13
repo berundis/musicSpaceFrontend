@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { editBand } from '../../actions/bandActions';
+import { editVenue } from '../../actions/venueActions';
 import PropTypes from 'prop-types';
 import { Redirect} from 'react-router-dom';
 
-class EditBand extends React.Component {
+class EditVenue extends React.Component {
   state = {
     email: '',
     name: '',
     location: '',
-    genre: '',
-    bio: '',
+    genres: '',
+    description: '',
     profile_img: '',
     done: false
   }
@@ -22,37 +22,37 @@ class EditBand extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault() 
-    const values = ['email', 'name', 'location', 'genre', 'bio', 'profile_img']
-    const bandData = {id: this.props.bandId}
+    const values = ['email', 'name', 'location', 'genres', 'bio', 'profile_img']
+    const venueData = {id: this.props.venueId}
     values.forEach(value => {
       if (this.state[value]){
-        bandData[value] = this.state[value]
+        venueData[value] = this.state[value]
       }
     })
 
-    this.props.editBand(bandData);
+    this.props.editVenue(venueData);
 
     this.setState({ done: true })
   } 
 
   render() {
     if (this.state.done) {
-      return <Redirect to="/band"/>
+      return <Redirect to="/venue"/>
     }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h3>Edit your Account:</h3>
+          <h3>Edit your Venue:</h3>
           <h4>Email:</h4>
           <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
-          <h4>Band Name:</h4>
+          <h4>Venue Name:</h4>
           <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
-          <h4>Genre:</h4>
-          <input type="text" name="genre" onChange={this.handleChange} value={this.state.genre}/>
+          <h4>Genres:</h4>
+          <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>
           <h4>location:</h4>
           <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
-          <h4>Bio:</h4>
-          <input type="text" name="bio" onChange={this.handleChange} value={this.state.bio}/>
+          <h4>Description:</h4>
+          <input type="text" name="description" onChange={this.handleChange} value={this.state.description}/>
           <h4>Profile Image (URL):</h4>
           <input type="text" name="profile_img" onChange={this.handleChange} value={this.state.profile_img}/>
           <br /><br/>
@@ -65,8 +65,8 @@ class EditBand extends React.Component {
 }
 
 
-EditBand.propTypes = {
-  editBand: PropTypes.func.isRequired
+EditVenue.propTypes = {
+  editVenue: PropTypes.func.isRequired
 }
 
-export default connect(null, { editBand })(EditBand);
+export default connect(null, { editVenue })(EditVenue);

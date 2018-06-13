@@ -1,4 +1,4 @@
-import { FETCH_VENUES, NEW_VENUE} from '../actions/types';
+import { FETCH_VENUES, NEW_VENUE, EDIT_VENUE } from '../actions/types';
 
 const initialState = {
   venues: [],
@@ -13,6 +13,11 @@ export default function(state = initialState, action) {
         venues: action.payload
       }
     case NEW_VENUE:
+      return {
+        ...state,
+        venue: action.payload
+      }
+      case EDIT_VENUE:
       return {
         ...state,
         venue: action.payload

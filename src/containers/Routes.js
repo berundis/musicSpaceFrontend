@@ -10,6 +10,7 @@ import Venue from '../components/Venue/Venue';
 import VenueProfile from '../components/Venue/Profile';
 import AllRoutes from './AllRoutes';
 import EditBand from '../components/Band/EditBand';
+import EditVenue from '../components/Venue/EditVenue';
 
 class Routes extends React.Component {
   getRoutes = () => {
@@ -17,9 +18,7 @@ class Routes extends React.Component {
       return (
         <div>
         <Route path="/bands" exact component={Band} />
-        <Route path='/band' exact render={(props) => <BandProfile {...props} /> } />
         <Route path="/venues" exact component={Venue} /> 
-        <Route path="/venue" exact render={(props) => <VenueProfile {...props} /> } />
         </div>
       )
     } else {
@@ -54,11 +53,21 @@ class Routes extends React.Component {
 
   editDeleteRoutes = () => {
     if (localStorage.getItem('token') && localStorage.getItem('profile_type') === 'band') {
-      return  <Route path="/band/edit" render={(props) => <EditBand {...props} bandId={localStorage.getItem('user_id')}/>}  />
-    // } else if (localStorage.getItem('token') && localStorage.getItem('profile_type') === 'venue') {
-    //    <Route path="/venue/edit" render={(props) => <EditVenue {...props} venueId={localStorage.getItem('user_id')}/>}  />
+      return  (
+        <div>
+          <Route path='/band' exact render={(props) => <BandProfile {...props} /> } />
+          <Route path="/band/edit" render={(props) => <EditBand {...props} bandId={localStorage.getItem('user_id')}/>}  />
+        </div>
+      )
+    } else if (localStorage.getItem('token') && localStorage.getItem('profile_type') === 'venue') {
+      return (
+        <div>
+          <Route path="/venue" exact render={(props) => <VenueProfile {...props} /> } />
+          <Route path="/venue/edit" render={(props) => <EditVenue {...props} venueId={localStorage.getItem('user_id')}/>}  />
+        </div>
+      )
     } else {
-      return null 
+      return <Redirect to="/" /> 
     }
   }
 

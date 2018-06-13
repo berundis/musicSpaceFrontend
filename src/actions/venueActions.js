@@ -1,4 +1,4 @@
-import { FETCH_VENUES, NEW_VENUE } from './types'
+import { FETCH_VENUES, NEW_VENUE, EDIT_VENUE } from './types'
 
 export const fetchVenues = () => (dispatch) => {
   fetch('http://localhost:3000/api/v1/venues')
@@ -21,6 +21,21 @@ export const createVenue = (venueData) => (dispatch) => {
   .then(res => res.json())
   .then(venue => dispatch({
     type: NEW_VENUE,
+    payload: venue
+  }))
+}
+
+export const editVenue = (venueData) => (dispatch) => {
+  fetch(`http://localhost:3000/api/v1/venues/${venueData.id}`, {
+    method: 'PATCH', 
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(venueData)
+  })
+  .then(res => res.json())
+  .then( venue => dispatch({
+    type: EDIT_VENUE, 
     payload: venue
   }))
 }
