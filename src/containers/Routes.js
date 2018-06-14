@@ -11,14 +11,17 @@ import VenueProfile from '../components/Venue/Profile';
 import AllRoutes from './AllRoutes';
 import EditBand from '../components/Band/EditBand';
 import EditVenue from '../components/Venue/EditVenue';
+import Show from '../components/Show/Show';
 
 class Routes extends React.Component {
+
   getRoutes = () => {
     if (localStorage.getItem('token')) {
       return (
         <div>
-        <Route path="/bands" exact component={Band} />
-        <Route path="/venues" exact component={Venue} /> 
+          <Route path="/bands" exact component={Band} />
+          <Route path="/venues" exact component={Venue} /> 
+          <Route path="/shows" exact component={Show} />
         </div>
       )
     } else {
@@ -51,7 +54,7 @@ class Routes extends React.Component {
     })
   }
 
-  editDeleteRoutes = () => {
+  editProfileRoutes = () => {
     if (localStorage.getItem('token') && localStorage.getItem('profile_type') === 'band') {
       return  (
         <div>
@@ -79,7 +82,7 @@ class Routes extends React.Component {
         <Route path="/bandregister" render={(props) => <CreateBand {...props} />} />
         <Route path="/venueregister" render={(props) => <CreateVenue {...props} />} />
         {this.getRoutes()}
-        {this.editDeleteRoutes()}
+        {this.editProfileRoutes()}
         <AllRoutes />  
       </div>
     )

@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProfileContainer from '../../containers/Band/ProfileContainer';
-import { deleteBand } from '../../actions/bandActions'
+import { deleteBand } from '../../actions/bandActions';
 
 
 class Profile extends Component {
@@ -37,7 +37,6 @@ class Profile extends Component {
   }
 
   deleteProfile = () => {
-    console.log("HEY DELTE")
     this.props.deleteBand(this.state.band.id) 
     localStorage.removeItem('token')
     localStorage.removeItem('user_id')

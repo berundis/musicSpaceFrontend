@@ -22,6 +22,7 @@ export default class NavBar extends Component {
         <div id="Navigation">
           <NavLink activeClassName="active" to="/bands">Bands</NavLink> 
           <NavLink activeClassName="active" to="/venues">Venues</NavLink>
+          <NavLink activeClassName="active" to="/shows">Shows</NavLink>
           <NavLink activeClassName="active" to={`/${profile}`}>Profile</NavLink>
           <button onClick={this.logOut}>Log Out</button>
         </div>

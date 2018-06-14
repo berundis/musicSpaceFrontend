@@ -37,7 +37,7 @@ export const editBand = (bandData) => (dispatch) => {
   .then( band => dispatch({
     type: EDIT_BAND, 
     payload: band
-  }))
+  })).then( band => console.log("EDIT", band))
 }
 
 export const deleteBand = (id) => (dispatch) =>{
@@ -46,7 +46,6 @@ export const deleteBand = (id) => (dispatch) =>{
   })
   .then(res => res.json())
   .then(band => {
-    console.log("BAND TO DELETE", band)
     return dispatch({
       type: DELETE_BAND,
       payload: id
