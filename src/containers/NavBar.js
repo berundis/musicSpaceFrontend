@@ -1,14 +1,18 @@
 
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 
 export default class NavBar extends Component {
+
+
 
   logOut = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user_id')
     localStorage.removeItem('profile_type')
+    this.setState({logedOut: true})
   }
   render() {
     let profile = '';
@@ -28,7 +32,7 @@ export default class NavBar extends Component {
         </div>
       )
     } else {
-      return null 
+      return <Redirect to="/" />
     }
   }
 }

@@ -21,7 +21,7 @@ export const createShow = (showData) => (dispatch) => {
   .then(show => dispatch({
     type: NEW_SHOW,
     payload: show
-  }))
+  })).then(console.log)
 }
 
 export const editShow = (showData) => (dispatch) => {

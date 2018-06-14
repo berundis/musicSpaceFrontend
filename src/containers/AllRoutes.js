@@ -9,7 +9,7 @@ import VenueProfileContainer from '../containers/Venue/ProfileContainer';
 
 class AllRoutes extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchBands();
     this.props.fetchVenues();
   }
@@ -21,8 +21,7 @@ class AllRoutes extends React.Component {
       return <BandProfileContainer band={ band } />
     } else {
       return null 
-    }
-      
+    }  
   }
 
   renderVenue = (renderProps) => {

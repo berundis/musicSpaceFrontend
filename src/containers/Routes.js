@@ -12,6 +12,7 @@ import AllRoutes from './AllRoutes';
 import EditBand from '../components/Band/EditBand';
 import EditVenue from '../components/Venue/EditVenue';
 import Show from '../components/Show/Show';
+import CreateShow from '../components/Show/CreateShow';
 
 class Routes extends React.Component {
 
@@ -22,6 +23,7 @@ class Routes extends React.Component {
           <Route path="/bands" exact component={Band} />
           <Route path="/venues" exact component={Venue} /> 
           <Route path="/shows" exact component={Show} />
+          <Route path="/shows/create" component={CreateShow} />
         </div>
       )
     } else {

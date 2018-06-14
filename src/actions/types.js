@@ -4,6 +4,7 @@ export const EDIT_BAND = 'EDIT_BAND';
 export const DELETE_BAND = "DELETE_BAND";
 
 export const FETCH_VENUES = 'FETCH_VENUES';
+export const FETCH_VENUE = 'FETCH_VENUE';
 export const NEW_VENUE = 'NEW_VENUE';
 export const EDIT_VENUE = 'EDIT_VENUE';
 export const DELETE_VENUE = "DELETE_VENUE";
