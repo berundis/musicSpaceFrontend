@@ -1,6 +1,5 @@
 import React from 'react'
 import {browserHistory} from 'react-router';
-import {Link} from 'react-router-dom';
 
 class BandContainer extends React.Component {
 
@@ -19,7 +18,6 @@ class BandContainer extends React.Component {
         <h3>Genres: {this.props.band.genres}</h3>
         <h3>Bio: {this.props.band.bio}</h3>
         <br/>
-        <h4>Shows:</h4>
       </div>
     )  
   }

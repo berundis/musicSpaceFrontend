@@ -6,6 +6,10 @@ import ShowProfileContainer from '../../containers/Show/ShowProfileContainer';
 
 class BandShows extends React.Component {
 
+  state = {
+    count: 0
+  }
+
 
   componentDidMount() {
     this.props.fetchShows();

@@ -57,8 +57,6 @@ class Profile extends Component {
         <Link to={`/shows/create`}>Create A Show</Link>
         <br /> <br />
         <button onClick={this.deleteProfile}>Delete Profile</button>
-        <h3>Shows:</h3>
-        <BandShows bandId={this.state.band.id} /> 
       </div>
     )
   }
@@ -68,6 +66,6 @@ Profile.propTypes = {
   deleteBand: PropTypes.func.isRequired
 }
 
-export default connect(null, { deleteBand})(Profile);
+export default connect(null, { deleteBand })(Profile);
 
 
