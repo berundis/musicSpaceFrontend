@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProfileContainer from '../../containers/Band/ProfileContainer';
 import { deleteBand } from '../../actions/bandActions';
-import BandShows from '../Band/BandShows';
-
 
 class Profile extends Component {
 

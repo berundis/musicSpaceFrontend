@@ -1,29 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchShows } from '../../actions/showActions';
+import { fetchShows } from '../../actions/showActions'; 
 import ShowProfileContainer from '../../containers/Show/ShowProfileContainer';
 
-class BandShows extends React.Component {
-
+class VenueShows extends React.Component {
   componentDidMount() {
     this.props.fetchShows();
   }
 
   filterShows = () => {
-    const shows = []
-    this.props.shows.forEach(show => {
-      show.bands.forEach(band => {
-        if(band.id === this.props.bandId){
-          shows.push(show)
-        }
-      })
-    })
-    return shows
+    return this.props.shows.filter(show => (
+      show.venue.id === this.props.venueId
+    ))
   }
 
   renderShows = () => {
     const shows = this.filterShows() 
+    console.log(shows)
     if(shows.length === 0) {
       return <h2>No Shows</h2>
     }
@@ -41,10 +35,9 @@ class BandShows extends React.Component {
       </div>
     )
   }
-
 }
 
-BandShows.propTypes = {
+VenueShows.propTypes = {
   fetchShows: PropTypes.func.isRequired,
   shows: PropTypes.array.isRequired
 }
@@ -52,4 +45,4 @@ BandShows.propTypes = {
 const mapStateToProps = state => ({
   shows: state.shows.shows
 })
-export default connect(mapStateToProps, { fetchShows })(BandShows)
+export default connect(mapStateToProps, { fetchShows })(VenueShows)
