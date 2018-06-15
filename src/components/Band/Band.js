@@ -40,7 +40,10 @@ class Band extends React.Component {
         ( band.genre && band.genre.toLowerCase().includes(this.state.genre.toLowerCase()) )
       ))
     }
-    return filtered.map(band => (<div key={band.id}><BandContainer band={band} handleClick={this.handleClick}/></div>))
+    return filtered.map(band => (
+      <div key={band.id}>
+        <BandContainer band={band} handleClick={this.handleClick}/>
+      </div>))
   }
 
   handleProfile = () => {
