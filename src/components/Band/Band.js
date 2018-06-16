@@ -5,6 +5,7 @@ import { fetchBands } from '../../actions/bandActions';
 import Filter from './Filter';
 import ProfileContainer from '../../containers/Band/ProfileContainer';
 import BandContainer from '../../containers/Band/BandContainer';
+import NavBar from '../../containers/NavBar'
 
 let past
 class Band extends React.Component {
@@ -63,6 +64,7 @@ class Band extends React.Component {
   render() {
     return (
       <div>
+        <NavBar />
         {this.handleProfile()}
       </div>
     )

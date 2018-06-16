@@ -6,6 +6,7 @@ import { Redirect} from 'react-router-dom';
 import AddBands from './AddBands';
 import AddVenue from './AddVenue';
 import DatePicker from 'react-date-picker';
+import NavBar from '../../containers/NavBar'
 
 class CreateShow extends React.Component {
   state = {
@@ -64,6 +65,7 @@ class CreateShow extends React.Component {
     console.log(this.state.date)
     return (
       <div>
+        <NavBar />
         <h2>Create a Show</h2>
         <form onSubmit={this.submit}>
           <button type="submit">SUBMIT</button>

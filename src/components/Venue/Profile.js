@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProfileContainer from '../../containers/Venue/ProfileContainer';
 import {deleteVenue} from '../../actions/venueActions';
+import NavBar from '../../containers/NavBar';
 
 class Profile extends Component {
 
@@ -49,6 +50,7 @@ class Profile extends Component {
     }
     return (
       <div>
+        <NavBar />
         <ProfileContainer venue={this.state.venue} />
         <Link to={`/venue/edit`}>Edit Profile</Link>
         <br/>

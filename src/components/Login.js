@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NavBar from '../containers/NavBar'
 
 export default class Login extends Component {
 
@@ -19,17 +20,29 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <h4>Email:</h4>
-            <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/> 
+        <NavBar />
+        <div className="center">
+          <div className="translucent" id="loginDiv">
+            <h1>Login</h1>
+            <div className="center">
+              <div className="translucent" id="loginForm">
+                <form onSubmit={this.handleSubmit}>
+                  <div>
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/> 
+                  </div>
+                  <br/>
+                  <div>
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
+                  </div>
+                  <br/>
+                  <input type="submit" value="submit"/>
+                </form>
+              </div>
+            </div>
           </div>
-          <div>
-            <h4>Password:</h4>
-            <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-          </div>
-          <input type="submit" value="submit"/>
-        </form>
+        </div>
       </div>
     )
   }

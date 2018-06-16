@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { editBand } from '../../actions/bandActions';
 import PropTypes from 'prop-types';
 import { Redirect} from 'react-router-dom';
+import NavBar from '../../containers/NavBar'
 
 class EditBand extends React.Component {
   state = {
@@ -41,6 +42,7 @@ class EditBand extends React.Component {
     }
     return (
       <div>
+        <NavBar />
         <form onSubmit={this.handleSubmit}>
           <h3>Edit your Account:</h3>
           <h4>Email:</h4>

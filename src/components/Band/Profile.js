@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProfileContainer from '../../containers/Band/ProfileContainer';
 import { deleteBand } from '../../actions/bandActions';
+import NavBar from '../../containers/NavBar'
 
 class Profile extends Component {
 
@@ -49,6 +50,7 @@ class Profile extends Component {
     }
     return (
       <div>
+        <NavBar />
         <ProfileContainer band={this.state.band} />
         <Link to={`/band/edit`}>Edit Profile</Link>
         <br /> <br />

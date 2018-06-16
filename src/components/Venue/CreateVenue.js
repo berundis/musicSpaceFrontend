@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createVenue } from '../../actions/venueActions';
 import PropTypes from 'prop-types';
 import { Redirect} from 'react-router-dom';
+import NavBar from '../../containers/NavBar'
 
 class CreateVenue extends React.Component {
   state = {
@@ -43,6 +44,7 @@ class CreateVenue extends React.Component {
     }
     return (
       <div>
+        <NavBar />
         <form onSubmit={this.handleSubmit}>
           <h3>Create A Venue Account:</h3>
           <h4>Email:</h4>

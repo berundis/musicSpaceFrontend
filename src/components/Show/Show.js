@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchShows } from '../../actions/showActions';
 import ShowContainer from '../../containers/Show/ShowContainer'
+import NavBar from '../../containers/NavBar';
 // import Filter from './Filter';
 
 
@@ -35,6 +36,7 @@ class Show extends React.Component {
   render() {
     return (
       <div>
+        <NavBar />
         <h1>All Shows</h1>
         {this.renderShows()}
       </div>

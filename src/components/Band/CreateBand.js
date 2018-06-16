@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { createBand } from '../../actions/bandActions';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import '../../CSS/Background.css'
+import Navbar from '../../containers/NavBar';
 
 class CreateBand extends React.Component {
   state = {
@@ -42,7 +44,8 @@ class CreateBand extends React.Component {
       return <Redirect to="/login"/>
     }
     return (
-      <div>
+      <div id='bandRegister' className='background'>
+        <Navbar />
         <form onSubmit={this.handleSubmit}>
           <h3>Create A Band Account:</h3>
           <h4>Email:</h4>

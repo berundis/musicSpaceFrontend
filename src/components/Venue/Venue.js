@@ -5,6 +5,7 @@ import { fetchVenues } from '../../actions/venueActions';
 import Filter from './Filter';
 import VenueContainer from '../../containers/Venue/VenueContainer';
 import ProfileContainer from '../../containers/Venue/ProfileContainer';
+import NavBar from '../../containers/NavBar';
 
 let past 
 class Venue extends React.Component {
@@ -59,6 +60,7 @@ class Venue extends React.Component {
   render() {
     return (
       <div>
+        <NavBar />
         {this.handleProfile()}
       </div>
     )

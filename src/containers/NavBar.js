@@ -46,7 +46,7 @@ export default class NavBar extends Component {
       <div className="navbar">
         <ul>
           <li>
-          {/* <NavLink activeClassName="active" to="/" exact>Home</NavLink>  */}
+          <NavLink activeClassName="active" to="/" exact>Home</NavLink> 
           {this.getLinks()}
           </li>
         </ul>
