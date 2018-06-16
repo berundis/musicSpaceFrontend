@@ -23,7 +23,7 @@ class VenueShows extends React.Component {
     }
     return shows.map(show => (
       <div key={show.show.id}>
-        <ShowProfileContainer show={show.show} bands={show.bands} venue={show.venue} />
+        <ShowProfileContainer show={show.show} bands={show.bands} venue={show.venue} venueId={this.props.venueId}/>
       </div>
     ))
   }

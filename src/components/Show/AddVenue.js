@@ -21,7 +21,7 @@ class AddVenue extends React.Component {
   addVenue = (e, venue) => {
     if (!this.state.venue){
       this.props.addVenue(venue.id)
-      this.setState({venue: venue})
+      this.setState({venue: venue, venueName: ''})
     }
   }
   deleteVenue = () => {
@@ -29,14 +29,17 @@ class AddVenue extends React.Component {
     this.setState({venue: ''})
   }
   showVenues = () => {
+    if(!this.state.venueName) {
+      return null
+    }
     let filtered = [...this.props.venues];
     filtered = filtered.filter( venue => (
       venue.name.toLowerCase().includes(this.state.venueName)
     ))
     return filtered.map(venue => (
       <div key={venue.id}>
-        <h4>{venue.name}</h4> 
-        <button onClick={(e) => this.addVenue(e,venue)}>Add Venue</button>
+        <br/>
+        <button onClick={(e) => this.addVenue(e,venue)}>{venue.name}</button>
       </div>
     ))
   }
@@ -62,9 +65,8 @@ class AddVenue extends React.Component {
       <div>
         <h4>Added Venue:</h4>
         {this.showAddedVenue()}
-        <br/>
         <h4>Find Venue By Name:</h4>
-        <input type="text" name="venueName" onChange={this.search} />
+        <input type="text" name="venueName" onChange={this.search} value={this.state.venueName}/>
         {this.showVenues()}
       </div>
     )

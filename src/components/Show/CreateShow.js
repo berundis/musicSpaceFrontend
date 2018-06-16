@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Redirect} from 'react-router-dom';
 import AddBands from './AddBands';
 import AddVenue from './AddVenue';
+import DatePicker from 'react-date-picker';
 
 class CreateShow extends React.Component {
   state = {
@@ -12,6 +13,7 @@ class CreateShow extends React.Component {
     venue_id: '',
     flyer: '',
     band_ids: [],
+    date: new Date(),
     done: false
   }
 
@@ -44,21 +46,22 @@ class CreateShow extends React.Component {
   deleteVenue = () => {
     this.setState({venue_id: ''})
   }
-  refetch = () => {
-    this.props.fetchShows() 
-    this.setState({done: true})
+
+  handleDate = date => {
+    this.setState({date})
   }
 
   submit = (e) => {
     e.preventDefault();
-    this.props.createShow(this.state)
-    this.refetch()
+    this.setState({date: this.state.date.toDateString()}, this.props.createShow(this.state))
+    this.setState({done: true})
   }
 
   render() {
     if(this.state.done){
       return <Redirect to="/shows" />
     }
+    console.log(this.state.date)
     return (
       <div>
         <h2>Create a Show</h2>
@@ -69,9 +72,10 @@ class CreateShow extends React.Component {
           <h4>Flyer URL:</h4>
           <input type="text" name="flyer" value={this.state.flyer} onChange={this.handleChange}/>
         </form>
+        <DatePicker onChange={this.handleDate} value={this.state.date}/>
         <AddVenue addVenue={this.addVenue} deleteVenue={this.deleteVenue}/>
         <AddBands addBand={this.addBand} deleteBand={this.deleteBand}/>
-
+        <button onClick={this.submit}>SUBMIT</button>
       </div>
     )
   }

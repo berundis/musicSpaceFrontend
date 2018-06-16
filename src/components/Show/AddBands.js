@@ -23,7 +23,7 @@ class AddBands extends React.Component {
     const bands = [...this.state.bands]
     if (!bands.includes(band)){
       bands.push(band)
-      this.setState({bands: bands})
+      this.setState({bands: bands, bandName: ''})
     } 
   }
 
@@ -32,15 +32,19 @@ class AddBands extends React.Component {
     const bands = this.state.bands.filter(band => band.id !== id)
     this.setState({bands: bands})
   }
+
   showBands = () => {
+    if(!this.state.bandName) {
+      return null
+    }
     let filtered = [...this.props.bands];
     filtered = filtered.filter( band => (
       band.name.toLowerCase().includes(this.state.bandName)
     ))
     return filtered.map(band => (
       <div key={band.id}>
-        <h4>{band.name}</h4> 
-        <button onClick={(e) => this.addBand(e, band)}>Add Band</button>
+        <br/>
+        <button onClick={(e) => this.addBand(e, band)}>{band.name}</button>
       </div>
     ))
   }
@@ -61,14 +65,13 @@ class AddBands extends React.Component {
     }
   }
   render() {
-    console.log(this.state.bands)
+    console.log(this.state.bandName)
     return (
       <div>
         <h4>Added Bands:</h4>
         {this.showAddedBands()}
-        <br/>
         <h4>Find Bands By Name:</h4>
-        <input type="text" name="bandName" onChange={this.search} />
+        <input type="text" name="bandName" onChange={this.search} value={this.state.bandName}/>
         {this.showBands()}
       </div>
     )

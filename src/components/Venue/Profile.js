@@ -50,7 +50,9 @@ class Profile extends Component {
     return (
       <div>
         <ProfileContainer venue={this.state.venue} />
-        <Link to={`/venue/edit`}>EDIT</Link>
+        <Link to={`/venue/edit`}>Edit Profile</Link>
+        <br/>
+        <Link to={`/shows/create`}>Create A Show</Link>
         <br /> <br />
         <button onClick={this.deleteProfile}>Delete Profile</button>
       </div>

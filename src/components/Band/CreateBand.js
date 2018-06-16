@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createBand } from '../../actions/bandActions';
 import PropTypes from 'prop-types';
-import { Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class CreateBand extends React.Component {
   state = {
