@@ -4,6 +4,8 @@ import { createVenue } from '../../actions/venueActions';
 import PropTypes from 'prop-types';
 import { Redirect} from 'react-router-dom';
 import NavBar from '../../containers/NavBar'
+import '../../CSS/Background.css'
+import '../../CSS/Style.css'
 
 class CreateVenue extends React.Component {
   state = {
@@ -43,28 +45,41 @@ class CreateVenue extends React.Component {
       return <Redirect to="/login"/>
     }
     return (
-      <div>
+      <div id="venueRegister" className='background scroll'>
         <NavBar />
-        <form onSubmit={this.handleSubmit}>
-          <h3>Create A Venue Account:</h3>
-          <h4>Email:</h4>
-          <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
-          <h4>Password:</h4>
-          <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-          <h4>Venue Name:</h4>
-          <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
-          <h4>Genres:</h4>
-          <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>
-          <h4>location:</h4>
-          <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
-          <h4>Description:</h4>
-          <input type="text" name="description" onChange={this.handleChange} value={this.state.bio}/>
-          <h4>Profile Image (URL):</h4>
-          <input type="text" name="profile_img" onChange={this.handleChange} value={this.state.profile_img}/>
-          <br /><br/>
-          <button type="submit">Submit</button>
-          <hr/>
-        </form>
+        <div className="center">
+          <div className="translucent outerFormDiv">  
+            <h1>Create A Venue Account</h1>
+            <div className="center">
+              <div className="translucent formDiv">
+                <form onSubmit={this.handleSubmit}>
+                  <label htmlFor="email">Email</label>
+                  <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
+                  <br/><br/>
+                  <label htmlFor="password">Password</label>
+                  <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
+                  <br/><br/>
+                  <label htmlFor="name">Venue Name</label>
+                  <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
+                  <br/><br/>
+                  <label htmlFor="genres">Genres</label>
+                  <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>
+                  <br/><br/>
+                  <label htmlFor="location">Location</label>
+                  <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
+                  <br/><br/>
+                  <label htmlFor="description">Description</label>
+                  <input type="text" name="description" onChange={this.handleChange} value={this.state.bio}/>
+                  <br/><br/>
+                  <label htmlFor="profile_img">Profile Image (URL)</label>
+                  <input type="text" name="profile_img" onChange={this.handleChange} value={this.state.profile_img}/>
+                  <br/><br/>
+                  <input type="submit" value="Submit"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

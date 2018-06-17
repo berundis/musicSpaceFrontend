@@ -8,7 +8,7 @@ export default () => {
   return (
     <div id="home" className='background'>
       <NavBar />
-      <div className="center">
+      <div className="center outer">
         <h1 className="translucent">Welcome To The Band Venue Website</h1>
       </div>
       <div>

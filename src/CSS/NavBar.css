@@ -3,6 +3,8 @@
   background: none;
   background-color: rgba(0,0,0,0.6);
   overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 .navbar ul {
   list-style-type: none;

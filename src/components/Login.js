@@ -19,13 +19,13 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="background scroll" id="login">
         <NavBar />
         <div className="center">
-          <div className="translucent" id="loginDiv">
+          <div className="translucent outerFormDiv">
             <h1>Login</h1>
             <div className="center">
-              <div className="translucent" id="loginForm">
+              <div className="translucent formDiv">
                 <form onSubmit={this.handleSubmit}>
                   <div>
                     <label htmlFor="email">Email</label>
@@ -37,7 +37,7 @@ export default class Login extends Component {
                     <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
                   </div>
                   <br/>
-                  <input type="submit" value="submit"/>
+                  <input type="submit" value="Submit"/>
                 </form>
               </div>
             </div>

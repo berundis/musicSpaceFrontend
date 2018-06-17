@@ -23,12 +23,24 @@
   background-size: cover;
 }
 
-#login {
-  
+#login{
+  background: url("https://images.pexels.com/photos/306088/pexels-photo-306088.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #bandRegister{
   background: url("https://static1.squarespace.com/static/579784fdebbd1ab78e904b09/57978bc046c3c4d83d8b581b/57978bdfb3db2b4ccf4c6118/1469925560949/%C2%A9JustinBorucki+-+AtTheDriveIn.jpg?format=1500w") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} 
+
+#venueRegister{
+  background: url("https://images.pexels.com/photos/219095/pexels-photo-219095.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
