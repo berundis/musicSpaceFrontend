@@ -10,7 +10,7 @@ class VenueContainer extends React.Component {
     
   render(){
     return (        
-      <div>
+      <div className="translucent center margin">
         <br/>
         <img onClick={(e) => this.click(e,this.props.venue)} alt={this.props.venue.name} src={this.props.venue.profile_img}/>
         <h1 onClick={(e) => this.click(e,this.props.venue)}>{this.props.venue.name}</h1>

@@ -23,6 +23,7 @@ class Venue extends React.Component {
   }
 
   handleChange = (e) => {
+    console.log(e.target.name)
     this.setState({[e.target.name]: e.target.value})
   }
 
@@ -35,12 +36,18 @@ class Venue extends React.Component {
   showVenues = () => {
     let filtered = [...this.props.venues]; 
     if( this.state.name || this.state.genre || this.state.location) {
-      filtered = filtered.filter(venue => (
-        ( venue.name && venue.name.toLowerCase().includes(this.state.name.toLowerCase())) &&
-        ( venue.location && venue.location.toLowerCase().includes(this.state.location.toLowerCase()) ) &&
-        ( venue.genres && (venue.genres.toLowerCase().includes(this.state.genres.toLowerCase() )|| venue.genres.includes("all")) )
-      ))
+      filtered = filtered.filter(venue => {
+        const name = venue.name.toLowerCase()
+        const genres = venue.genres.toLowerCase()
+        const location = venue.location.toLowerCase()
+        if (name.includes(this.state.name.toLowerCase()) && 
+            location.includes(this.state.location.toLowerCase()) && 
+            (genres.includes(this.state.genre.toLowerCase()) || genres.includes("all"))){
+          return venue
+        }
+      })
     }
+
     return filtered.map(venue => (<div key={venue.id}><VenueContainer venue={venue} handleClick={this.handleClick}/></div>))
   }
   
@@ -50,9 +57,12 @@ class Venue extends React.Component {
       return <ProfileContainer venue={this.state.venue}/>
     }else {
       return (
-        <div>
+        <div id="showVenues" className="background scroll">
+          <NavBar />
           <Filter filter={this.handleChange} /> 
-          {this.showVenues()}
+          <div className="flex">
+            {this.showVenues()}
+          </div>
         </div>
       )
     }

@@ -47,8 +47,16 @@
   background-size: cover;
 } 
 
-#bandFilter{
+#showBands{
   background: url("https://images.pexels.com/photos/96857/pexels-photo-96857.jpeg?auto=compress&cs=tinysrgb&h=350") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#showVenues{
+  background: url("https://images.unsplash.com/photo-1521606224735-b5f7b0265a8d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=44ddaceb94c68a18f58ae563bc9cb950&auto=format&fit=crop&w=1489&q=80") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
