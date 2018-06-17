@@ -53,9 +53,12 @@ class Band extends React.Component {
       return <ProfileContainer band={this.state.band}/>
     }else {
       return (
-        <div>
+        <div id="bandFilter" className='background scroll'>
+          <NavBar />
           <Filter filter={this.handleChange} /> 
-          {this.showBands()}
+            <div className="flex">
+              {this.showBands()}
+            </div>
         </div>
       )
     }
