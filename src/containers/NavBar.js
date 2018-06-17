@@ -34,6 +34,7 @@ export default class NavBar extends Component {
     }else {
       return (
         <div>
+          <NavLink activeClassName="active" to="/" exact>Home</NavLink> 
           <NavLink activeClassName="active" to="/login">Login</NavLink> 
           <NavLink activeClassName="active" to="/bandregister">Band Sign Up</NavLink> 
           <NavLink activeClassName="active" to="/venueregister">Venue Sign Up</NavLink> 
@@ -46,7 +47,6 @@ export default class NavBar extends Component {
       <div className="navbar">
         <ul>
           <li>
-          <NavLink activeClassName="active" to="/" exact>Home</NavLink> 
           {this.getLinks()}
           </li>
         </ul>

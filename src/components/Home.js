@@ -9,7 +9,7 @@ export default () => {
     <div id="home" className='background'>
       <NavBar />
       <div className="center outer">
-        <h1 className="translucent">Welcome To The Band Venue Website</h1>
+        <h1 className="translucent">Welcome To Music Space</h1>
       </div>
       <div>
         <NavLink to="/login">Login</NavLink><br/>

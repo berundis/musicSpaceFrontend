@@ -44,9 +44,9 @@ class ProfileContainer extends React.Component {
         </div>
         <div className="center">
           <div className="translucent maxwidth">
-          <div className="wrapper">
-            <div className="two"><input onClick={this.click} type="submit" value={this.state.text}/></div>
-          </div>
+            <div className="wrapper">
+              <div className="two"><input onClick={this.click} type="submit" value={this.state.text}/></div>
+            </div>
           </div>
         </div>  
           
