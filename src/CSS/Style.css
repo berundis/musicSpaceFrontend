@@ -59,3 +59,60 @@ h1 {
   margin-bottom: 20px;
   padding: 40px;
 }
+
+.stack{
+  width: 100%;
+}
+img {
+  width: 350px;
+  height: 250px;
+}
+.maxwidth {
+  width: 41%;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  /* grid-auto-rows: minmax(100px, auto); */
+}
+
+.one {
+  grid-column:1;
+  grid-row: 2/5;
+}
+.two {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+.three {
+  grid-column: 2;
+  grid-row: 2/5;
+}
+.four {
+  grid-column: 1/3;
+}
+.bar{
+  margin: 0;
+}
+.bar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bar a {
+  background-color: rgba(199,21,133,0.8);
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.bar a:hover {
+  background-color: #ddd;
+  color: black;
+}

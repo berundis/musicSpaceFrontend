@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import ProfileContainer from '../../containers/Venue/ProfileContainer';
 import {deleteVenue} from '../../actions/venueActions';
 import NavBar from '../../containers/NavBar';
+import "../../CSS/Style.css"
 
 class Profile extends Component {
 
@@ -51,12 +52,14 @@ class Profile extends Component {
     return (
       <div>
         <NavBar />
+        <div className="center">
+          <div className="translucent">
+            <Link to={`/venue/edit`}>Edit Profile</Link>
+            <Link to={`/shows/create`}>Create A Show</Link>
+            <button onClick={this.deleteProfile}>Delete Profile</button>
+          </div>
+        </div>
         <ProfileContainer venue={this.state.venue} />
-        <Link to={`/venue/edit`}>Edit Profile</Link>
-        <br/>
-        <Link to={`/shows/create`}>Create A Show</Link>
-        <br /> <br />
-        <button onClick={this.deleteProfile}>Delete Profile</button>
       </div>
     )
   }

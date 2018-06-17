@@ -44,6 +44,20 @@ class Profile extends Component {
     this.setState({delete: true})
   }
 
+  profileBar = () => (
+    <div className="center">
+      <div className="translucent outer bar">
+        <ul>
+          <li>
+            <Link to={`/band/edit`}>Edit Profile</Link>
+            <Link to={`/shows/create`}>Create A Show</Link>
+            <Link to={`/`} onClick={this.deleteProfile}>Delete Profile</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
+
   render() {
     if(this.state.delete){
       return <Redirect to="/" />
@@ -51,12 +65,7 @@ class Profile extends Component {
     return (
       <div>
         <NavBar />
-        <ProfileContainer band={this.state.band} />
-        <Link to={`/band/edit`}>Edit Profile</Link>
-        <br /> <br />
-        <Link to={`/shows/create`}>Create A Show</Link>
-        <br /> <br />
-        <button onClick={this.deleteProfile}>Delete Profile</button>
+        <ProfileContainer band={this.state.band} bar={this.profileBar()}/>
       </div>
     )
   }
