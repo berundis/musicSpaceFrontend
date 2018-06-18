@@ -34,7 +34,7 @@ class AddVenue extends React.Component {
     }
     let filtered = [...this.props.venues];
     filtered = filtered.filter( venue => (
-      venue.name.toLowerCase().includes(this.state.venueName)
+      venue.name.toLowerCase().includes(this.state.venueName.toLowerCase())
     ))
     return filtered.map(venue => (
       <div key={venue.id}>
@@ -62,10 +62,13 @@ class AddVenue extends React.Component {
   render() {
     console.log(this.state.venue)
     return (
-      <div>
-        <h4>Added Venue:</h4>
-        {this.showAddedVenue()}
-        <h4>Find Venue By Name:</h4>
+      <div className="center">
+        <div className="translucent">
+          <h2>Added Venue</h2>
+          {this.showAddedVenue()}
+        </div>
+        <br/>
+        <label htmlFor="venueName">Find Venue By Name</label>
         <input type="text" name="venueName" onChange={this.search} value={this.state.venueName}/>
         {this.showVenues()}
       </div>

@@ -39,7 +39,7 @@ class AddBands extends React.Component {
     }
     let filtered = [...this.props.bands];
     filtered = filtered.filter( band => (
-      band.name.toLowerCase().includes(this.state.bandName)
+      band.name.toLowerCase().includes(this.state.bandName.toLowerCase())
     ))
     return filtered.map(band => (
       <div key={band.id}>
@@ -67,10 +67,14 @@ class AddBands extends React.Component {
   render() {
     console.log(this.state.bandName)
     return (
-      <div>
-        <h4>Added Bands:</h4>
-        {this.showAddedBands()}
-        <h4>Find Bands By Name:</h4>
+      <div className="center">
+        <div className="translucent">
+          <h2>Added Bands</h2>
+          {this.showAddedBands()}
+        </div>
+        
+        <br/>
+        <label htmlFor="bandName">Find Bands By Name</label>
         <input type="text" name="bandName" onChange={this.search} value={this.state.bandName}/>
         {this.showBands()}
       </div>

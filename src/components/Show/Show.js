@@ -26,7 +26,7 @@ class Show extends React.Component {
       return this.props.shows.map(show => {
         return (
           <div key={show.show.name}>
-          <ShowContainer show={show.show} bands={show.bands} venue={show.venue}/>
+            <ShowContainer show={show.show} bands={show.bands} venue={show.venue}/>
           </div>
         )
       })
@@ -35,10 +35,16 @@ class Show extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="background scroll" id="showShows">
         <NavBar />
-        <h1>All Shows</h1>
-        {this.renderShows()}
+        <div className="center" style={{marginTop: "60px"}}>
+          <div className="translucent center">
+            <h1>All Shows</h1>
+          </div>
+        </div>
+        <div className="flex">
+          {this.renderShows()}
+        </div>
       </div>
     )
   }

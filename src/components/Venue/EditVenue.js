@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { editVenue } from '../../actions/venueActions';
 import PropTypes from 'prop-types';
 import { Redirect} from 'react-router-dom';
+import NavBar from '../../containers/NavBar';
 
 class EditVenue extends React.Component {
   state = {
@@ -40,25 +41,35 @@ class EditVenue extends React.Component {
       return <Redirect to="/venue"/>
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h3>Edit your Venue:</h3>
-          <h4>Email:</h4>
-          <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
-          <h4>Venue Name:</h4>
-          <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
-          <h4>Genres:</h4>
-          <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>
-          <h4>location:</h4>
-          <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
-          <h4>Description:</h4>
-          <input type="text" name="description" onChange={this.handleChange} value={this.state.description}/>
-          <h4>Profile Image (URL):</h4>
-          <input type="text" name="profile_img" onChange={this.handleChange} value={this.state.profile_img}/>
-          <br /><br/>
-          <button type="submit">Submit</button>
-          <hr/>
-        </form>
+      <div className="background scroll">
+        <NavBar />
+        <div className="center">
+          <div className="translucent outerFormDiv">
+            <h1>Edit your Account</h1>
+            <br/>
+            <form onSubmit={this.handleSubmit}>
+              <label htmlFor="email">Email</label>
+              <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/>
+              <br/><br/>
+              <label htmlFor="name">Venue Name</label>
+              <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
+              <br/><br/>
+              <label htmlFor="genres">Genres</label>
+              <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>
+              <br/><br/>
+              <label htmlFor="location">Location</label>
+              <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
+              <br/><br/>
+              <label htmlFor="description">Description</label>
+              <input type="text" name="description" onChange={this.handleChange} value={this.state.description}/>
+              <br/><br/>
+              <label htmlFor="profile_img">Profile Image (URL)</label>
+              <input type="text" name="profile_img" onChange={this.handleChange} value={this.state.profile_img}/>
+              <br/><br/>
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }

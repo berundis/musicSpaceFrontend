@@ -64,20 +64,31 @@ class CreateShow extends React.Component {
     }
     console.log(this.state.date)
     return (
-      <div>
+      <div className="background scroll">
         <NavBar />
-        <h2>Create a Show</h2>
-        <form onSubmit={this.submit}>
-          <button type="submit">SUBMIT</button>
-          <h4>Name:</h4>
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
-          <h4>Flyer URL:</h4>
-          <input type="text" name="flyer" value={this.state.flyer} onChange={this.handleChange}/>
-        </form>
-        <DatePicker onChange={this.handleDate} value={this.state.date}/>
-        <AddVenue addVenue={this.addVenue} deleteVenue={this.deleteVenue}/>
-        <AddBands addBand={this.addBand} deleteBand={this.deleteBand}/>
-        <button onClick={this.submit}>SUBMIT</button>
+        <div className="center">
+          <div className="translucent outerFormDiv">
+            <h2>Create a Show</h2>
+            <form onSubmit={this.submit}>
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+              <br/><br/>
+              <label htmlFor="flyer">Flyer (URL)</label>
+              <input type="text" name="flyer" value={this.state.flyer} onChange={this.handleChange}/>
+            </form>
+            
+            <div className="translucent">
+              <label>Date</label><br/><br/>
+              <DatePicker onChange={this.handleDate} value={this.state.date}/>
+            </div>
+            <div className="wrapper">
+              <AddVenue addVenue={this.addVenue} deleteVenue={this.deleteVenue}/>
+              <AddBands addBand={this.addBand} deleteBand={this.deleteBand}/>
+            </div>
+            <br/><br/>
+            <input type="submit" onClick={this.submit} value="Submit"/>
+          </div>
+        </div>
       </div>
     )
   }

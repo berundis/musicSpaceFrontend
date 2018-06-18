@@ -23,7 +23,6 @@ class Venue extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log(e.target.name)
     this.setState({[e.target.name]: e.target.value})
   }
 
