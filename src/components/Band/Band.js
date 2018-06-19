@@ -12,10 +12,12 @@ class Band extends React.Component {
 
   state = {
     genre: '',
-    location: '',
+    city: '',
+    state: '',
     name: '',
     clicked: false,
-    band: ''
+    band: '',
+    state: ''
   }
 
   componentDidMount() {
@@ -34,10 +36,11 @@ class Band extends React.Component {
 
   showBands = () => {
     let filtered = [...this.props.bands];
-    if( this.state.name || this.state.genre || this.state.location) {
+    if( this.state.name || this.state.genre || this.state.city || this.state.state) {
       filtered = filtered.filter(band => (
         ( band.name && band.name.toLowerCase().includes(this.state.name.toLowerCase())) &&
-        ( band.location && band.location.toLowerCase().includes(this.state.location.toLowerCase()) ) &&
+        ( band.state && band.state.toLowerCase().includes(this.state.state.toLowerCase()) ) &&
+        ( band.city && band.city.toLowerCase().includes(this.state.city.toLowerCase())) &&
         ( band.genre && band.genre.toLowerCase().includes(this.state.genre.toLowerCase()) )
       ))
     }

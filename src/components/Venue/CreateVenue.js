@@ -12,11 +12,13 @@ class CreateVenue extends React.Component {
     email: '',
     password: '', 
     name: '',
-    location: '', 
+    state: '', 
+    city: '',
     genres: '', 
     description: '', 
     profile_img: '', 
-    done: false
+    done: false,
+    loading: true,
   }
 
   handleChange = (e) => {
@@ -29,13 +31,14 @@ class CreateVenue extends React.Component {
       email: this.state.email,
       password: this.state.password,
       name: this.state.name,
-      location: this.state.location, 
+      city: this.state.city, 
+      state: this.state.state,
       genres: this.state.genres, 
       description: this.state.description, 
       profile_img: this.state.profile_img
     }
 
-    this.props.createVenue(newVenue);
+    this.props.createVenue(newVenue)
 
     this.setState({ done: true })
   }
@@ -44,6 +47,7 @@ class CreateVenue extends React.Component {
     if (this.state.done) {
       return <Redirect to="/login"/>
     }
+    console.log(this.state.loading)
     return (
       <div id="venueRegister" className='background scroll'>
         <NavBar />
@@ -65,8 +69,11 @@ class CreateVenue extends React.Component {
                   <label htmlFor="genres">Genres</label>
                   <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>
                   <br/><br/>
-                  <label htmlFor="location">Location</label>
-                  <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
+                  <label htmlFor="state">State</label>
+                  <input type="text" name="state" onChange={this.handleChange} value={this.state.state}/>
+                  <br/><br/>
+                  <label htmlFor="city">City</label>
+                  <input type="text" name="city" onChange={this.handleChange} value={this.state.city}/>
                   <br/><br/>
                   <label htmlFor="description">Description</label>
                   <input type="text" name="description" onChange={this.handleChange} value={this.state.bio}/>

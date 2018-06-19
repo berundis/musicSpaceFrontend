@@ -41,12 +41,12 @@ class ShowProfileContainer extends React.Component {
     const bands = []
     this.props.bands.forEach(band => bands.push(band.name))
     return (
-      <div className="translucent"> 
+      <div className="translucent margin setContainer"> 
         <img src={this.props.show.flyer} alt={this.props.show.name}/>
         <h2>{this.props.show.name}</h2>
-        <h3>Venue: {this.props.venue.name}</h3>
-        <h3>Location: {this.props.venue.location}</h3>
-        <h3>Bands: {bands.join(", ")}</h3>
+        <h3><div className="title">Venue</div> {this.props.venue.name}</h3>
+        <h3><div className="title">Location</div> {this.props.venue.city}, {this.props.venue.state}</h3>
+        <h3><div className="title">Bands</div> {bands.join(", ")}</h3>
         {this.displayDelete()}
       </div>
     )

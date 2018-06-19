@@ -4,7 +4,7 @@ const Filter = (props) => {
   return (
     <div className="center">
       <div className="translucent outerFormDiv">
-        <h2>Filter Bands By:</h2>
+        <h2>Filter Shows By:</h2>
         <label htmlFor="state">State</label>
         <input type="text" name="state" onChange={props.filter}/>
         <br/><br/>
@@ -14,8 +14,11 @@ const Filter = (props) => {
         <label htmlFor="genre">Genre</label>
         <input type="text" name="genre" onChange={props.filter}/>
         <br/><br/>
-        <label htmlFor="name">Band Name</label>
-        <input type="text" name="name" onChange={props.filter}/>
+        <label htmlFor="bandName">Band</label>
+        <input type="text" name="bandName" onChange={props.filter}/>
+        <br/><br/>
+        <label htmlFor="venueName">Venue</label>
+        <input type="text" name="venueName" onChange={props.filter}/>
       </div>
     </div>
   )

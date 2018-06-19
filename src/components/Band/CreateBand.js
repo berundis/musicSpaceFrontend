@@ -12,7 +12,8 @@ class CreateBand extends React.Component {
     email: '',
     password: '',
     name: '',
-    location: '',
+    city: '',
+    state: '',
     genre: '',
     bio: '',
     profile_img: '',
@@ -29,7 +30,8 @@ class CreateBand extends React.Component {
       email: this.state.email,
       password: this.state.password,
       name: this.state.name,
-      location: this.state.location, 
+      state: this.state.state, 
+      city: this.state.city,
       genre: this.state.genre, 
       bio: this.state.bio, 
       profile_img: this.state.profile_img
@@ -65,8 +67,11 @@ class CreateBand extends React.Component {
                   <label htmlFor="genre">Genre</label>
                   <input type="text" name="genre" onChange={this.handleChange} value={this.state.genre}/>
                   <br/><br/>
-                  <label htmlFor="location">Location</label>
-                  <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
+                  <label htmlFor="state">State</label>
+                  <input type="text" name="state" onChange={this.handleChange} value={this.state.state}/>
+                  <br/><br/>
+                  <label htmlFor="city">City</label>
+                  <input type="text" name="city" onChange={this.handleChange} value={this.state.city}/>
                   <br/><br/>
                   <label htmlFor="bio">Bio</label>
                   <input type="text" name="bio" onChange={this.handleChange} value={this.state.bio}/>

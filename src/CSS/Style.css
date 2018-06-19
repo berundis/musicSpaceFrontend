@@ -3,7 +3,7 @@
 }
 
 .translucent {
-   background-color: rgba(0, 0, 0,0.6);
+   background-color: rgba(10, 10, 10,0.7);
    display: inline-block;
    margin: 1em auto;
    padding: 20px;
@@ -71,6 +71,7 @@ h1 {
 
 .stack{
   width: 100%;
+  text-align: left;
 }
 img {
   width: 350px;
@@ -136,4 +137,25 @@ img {
 }
 .margin {
   margin-left: 40px;
+}
+.setWidth{
+  max-width:400px;
+  min-width:300px;
+  min-height: 250px;
+  margin: auto;
+}
+
+.setContainer {
+  max-width: 350px;
+  min-width: 200px;
+  margin: 20px;
+}
+.title {
+  color: rgb(0, 134, 179);
+  font-size: 25px;
+  display: inline;
+}
+
+.header {
+  color: rgb(199,21,133);
 }

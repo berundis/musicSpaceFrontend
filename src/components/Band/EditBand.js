@@ -9,7 +9,8 @@ class EditBand extends React.Component {
   state = {
     email: '',
     name: '',
-    location: '',
+    state: '',
+    city: '',
     genre: '',
     bio: '',
     profile_img: '',
@@ -23,7 +24,7 @@ class EditBand extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault() 
-    const values = ['email', 'name', 'location', 'genre', 'bio', 'profile_img']
+    const values = ['email', 'name', 'state', 'city', 'genre', 'bio', 'profile_img']
     const bandData = {id: this.props.bandId}
     values.forEach(value => {
       if (this.state[value]){
@@ -32,6 +33,7 @@ class EditBand extends React.Component {
     })
 
     this.props.editBand(bandData);
+    
 
     this.setState({ done: true })
   } 
@@ -56,8 +58,11 @@ class EditBand extends React.Component {
               <label htmlFor="genre">Genre</label>
               <input type="text" name="genre" onChange={this.handleChange} value={this.state.genre}/>
               <br/><br/>
-              <label htmlFor="location">Location</label>
-              <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
+              <label htmlFor="state">State</label>
+              <input type="text" name="state" onChange={this.handleChange} value={this.state.state}/>
+              <br/><br/>
+              <label htmlFor="city">City</label>
+              <input type="text" name="city" onChange={this.handleChange} value={this.state.city}/>
               <br/><br/>
               <label htmlFor="bio">Bio</label>
               <input type="text" name="bio" onChange={this.handleChange} value={this.state.bio}/>

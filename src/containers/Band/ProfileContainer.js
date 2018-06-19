@@ -35,10 +35,11 @@ class ProfileContainer extends React.Component {
             <div className="wrapper">
               <div className="one"><img className="translucent bar" alt={this.props.name} src={this.props.band.profile_img}/></div>
               <div className="two"><h1 className="translucent bar">{this.props.band.name}</h1></div> 
-              <div className="three translucent bar">
-                <h3 className="stack">Location: {this.props.band.location}</h3>
-                <h3 className="stack">Genre: {this.props.band.genre}</h3>
-                <h3 className="stack">Bio: {this.props.band.bio}</h3>
+              <div className="three translucent bar setWidth">
+                <h3 className="stack"><div className="title">Location</div> {this.props.band.city}, {this.props.band.state}</h3>
+                <h3 className="stack"><div className="title">Genre</div> {this.props.band.genre}</h3>
+                <h3 className="stack"><div className="title">Bio</div> {this.props.band.bio}</h3>
+                <h3 className="stack"><div className="title">Contact</div> {this.props.band.email}</h3>
               </div>
               <div className="four">
                 {this.props.bar}

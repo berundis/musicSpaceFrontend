@@ -12,7 +12,8 @@ class Venue extends React.Component {
 
   state = {
     genre: '', 
-    location: '', 
+    state: '', 
+    city: '',
     name: '', 
     clicked: false,
     venue: ''
@@ -31,24 +32,55 @@ class Venue extends React.Component {
     this.setState({clicked: !this.state.clicked})
     this.setState({venue: venue})
   }
-
   showVenues = () => {
     let filtered = [...this.props.venues]; 
-    if( this.state.name || this.state.genre || this.state.location) {
+    if(this.state.name || this.state.genre || this.state.city || this.state.state) {
       filtered = filtered.filter(venue => {
         const name = venue.name.toLowerCase()
-        const genres = venue.genres.toLowerCase()
-        const location = venue.location.toLowerCase()
+        let genres = ""
+        if (venue.genres) {
+          genres = venue.genres.toLowerCase()
+        } 
+        let state = "" 
+        if (venue.state) {
+          state = venue.state.toLowerCase() 
+        }
+        let city = ""
+        if (venue.city) {
+          city = venue.city.toLowerCase()
+        } 
         if (name.includes(this.state.name.toLowerCase()) && 
-            location.includes(this.state.location.toLowerCase()) && 
+            state.includes(this.state.state.toLowerCase()) && 
+            city.includes(this.state.city.toLowerCase()) &&
             (genres.includes(this.state.genre.toLowerCase()) || genres.includes("all"))){
           return venue
         }
       })
+
     }
 
     return filtered.map(venue => (<div key={venue.id}><VenueContainer venue={venue} handleClick={this.handleClick}/></div>))
   }
+  // showVenues = () => {
+  //   let filtered = [...this.props.venues]; 
+  //   if(this.state.name || this.state.genre || this.state.city || this.state.state) {
+  //     filtered = filtered.filter(venue => {
+  //       console.log(venue)
+  //       const name = venue.name.toLowerCase()
+  //       const genres = venue.genres.toLowerCase()
+  //       const state = venue.state.toLowerCase()
+  //       const city = venue.city.toLowerCase()
+  //       if (name.includes(this.state.name.toLowerCase()) && 
+  //           state.includes(this.state.state.toLowerCase()) && 
+  //           city.includes(this.state.city.toLowerCase()) &&
+  //           (genres.includes(this.state.genre.toLowerCase()) || genres.includes("all"))){
+  //         return venue
+  //       }
+  //     })
+  //   }
+
+  //   return filtered.map(venue => (<div key={venue.id}><VenueContainer venue={venue} handleClick={this.handleClick}/></div>))
+  // }
   
   handleProfile = () => {
     if (this.state.clicked !== past) {

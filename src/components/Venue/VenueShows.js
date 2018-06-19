@@ -17,7 +17,6 @@ class VenueShows extends React.Component {
 
   renderShows = () => {
     const shows = this.filterShows() 
-    console.log(shows)
     if(shows.length === 0) {
       return <h2>No Shows</h2>
     }
@@ -30,7 +29,7 @@ class VenueShows extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="flex">
         {this.renderShows()}
       </div>
     )

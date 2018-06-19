@@ -9,7 +9,8 @@ class EditVenue extends React.Component {
   state = {
     email: '',
     name: '',
-    location: '',
+    state: '',
+    city: '',
     genres: '',
     description: '',
     profile_img: '',
@@ -23,7 +24,8 @@ class EditVenue extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault() 
-    const values = ['email', 'name', 'location', 'genres', 'bio', 'profile_img']
+    console.log(this.state)
+    const values = ['email', 'name', 'state', 'city', 'genres', 'description', 'profile_img']
     const venueData = {id: this.props.venueId}
     values.forEach(value => {
       if (this.state[value]){
@@ -57,8 +59,11 @@ class EditVenue extends React.Component {
               <label htmlFor="genres">Genres</label>
               <input type="text" name="genres" onChange={this.handleChange} value={this.state.genres}/>
               <br/><br/>
-              <label htmlFor="location">Location</label>
-              <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/>
+              <label htmlFor="state">State</label>
+              <input type="text" name="state" onChange={this.handleChange} value={this.state.state}/>
+              <br/><br/>
+              <label htmlFor="city">City</label>
+              <input type="text" name="city" onChange={this.handleChange} value={this.state.city}/>
               <br/><br/>
               <label htmlFor="description">Description</label>
               <input type="text" name="description" onChange={this.handleChange} value={this.state.description}/>

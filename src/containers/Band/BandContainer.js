@@ -10,12 +10,12 @@ class BandContainer extends React.Component {
       
   render(){
     return (        
-      <div className="translucent center margin">
+      <div onClick={(e) => this.click(e,this.props.band)} className="translucent center margin setContainer">
         <br/>
-        <img onClick={(e) => this.click(e,this.props.band)} alt={this.props.band.name} src={this.props.band.profile_img}/>
-        <h1 onClick={(e) => this.click(e,this.props.band)}>{this.props.band.name}</h1>
-        <h3>Location: {this.props.band.location}</h3>
-        <h3>Genre: {this.props.band.genre}</h3>
+        <img alt={this.props.band.name} src={this.props.band.profile_img}/>
+        <h1>{this.props.band.name}</h1>
+        <h3><div className="title">Location</div> {this.props.band.city}, {this.props.band.state}</h3>
+        <h3><div className="title">Genre</div> {this.props.band.genre}</h3>
         <br/>
       </div>
     )  

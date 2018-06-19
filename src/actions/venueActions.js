@@ -6,7 +6,7 @@ export const fetchVenues = () => (dispatch) => {
   .then(venues => dispatch({
     type: FETCH_VENUES,
     payload: venues
-  }))
+  })).then(console.log("Get Venues"))
 }
 
 export const fetchVenue = (id) => (dispatch) => {
@@ -15,7 +15,7 @@ export const fetchVenue = (id) => (dispatch) => {
   .then(venue => dispatch({
     type: FETCH_VENUE,
     payload: venue
-  }))
+  })).then(console.log("Get Venue"))
 }
 
 export const createVenue = (venueData) => (dispatch) => {
@@ -31,7 +31,8 @@ export const createVenue = (venueData) => (dispatch) => {
   .then(venue => dispatch({
     type: NEW_VENUE,
     payload: venue
-  }))
+  })).then(console.log("Create Venue"))
+
 }
 
 export const editVenue = (venueData) => (dispatch) => {
@@ -46,7 +47,7 @@ export const editVenue = (venueData) => (dispatch) => {
   .then( venue => dispatch({
     type: EDIT_VENUE, 
     payload: venue
-  })).then(venue => console.log(venue))
+  })).then(venue => console.log("Edit Venue"))
 }
 
 export const deleteVenue = (id) => (dispatch) =>{

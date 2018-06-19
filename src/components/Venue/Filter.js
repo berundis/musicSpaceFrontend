@@ -5,8 +5,11 @@ const Filter = (props) => {
     <div className="center">
       <div className="translucent outerFormDiv">
         <h2>Filter Venues By:</h2>
-        <label htmlFor="location">Location</label>
-        <input type="text" name="location" onChange={props.filter}/>
+        <label htmlFor="state">State</label>
+        <input type="text" name="state" onChange={props.filter}/>
+        <br/><br/>
+        <label htmlFor="city">City</label>
+        <input type="text" name="city" onChange={props.filter}/>
         <br/><br/>
         <label htmlFor="genre">Genre</label>
         <input type="text" name="genre" onChange={props.filter}/>

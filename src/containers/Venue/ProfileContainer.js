@@ -31,10 +31,11 @@ class ProfileContainer extends React.Component {
           <div className="wrapper">
             <div className="one"><img className="translucent bar" alt={this.props.venue.name} src={this.props.venue.profile_img}/></div>
             <div className="two"><h1 className="translucent bar">{this.props.venue.name}</h1></div>
-            <div className="three translucent bar">
-              <h3 className="stack">Location: {this.props.venue.location}</h3>
-              <h3 className="stack">Genres: {this.props.venue.genres}</h3>
-              <h3 className="stack">Description: {this.props.venue.description}</h3>
+            <div className="three translucent bar setWidth">
+              <h3 className="stack"><div className="title">Location</div> {this.props.venue.city}, {this.props.venue.state}</h3>
+              <h3 className="stack"><div className="title">Genres</div> {this.props.venue.genres}</h3>
+              <h3 className="stack"><div className="title">Description</div> {this.props.venue.description}</h3>
+              <h3 className="stack"><div className="title">Contact</div> {this.props.venue.email}</h3>
             </div>
             <div className="four">
               {this.props.bar}
@@ -50,7 +51,9 @@ class ProfileContainer extends React.Component {
         </div>
        
         <br/><br/>
-        {this.displayShows()}
+        <div className="flex">
+          {this.displayShows()}
+        </div>
       </div>
     )
   }

@@ -4,16 +4,15 @@ import { connect } from 'react-redux';
 import { fetchShows } from '../../actions/showActions';
 import ShowContainer from '../../containers/Show/ShowContainer'
 import NavBar from '../../containers/NavBar';
-// import Filter from './Filter';
-
+import Filter from './Filter';
 
 class Show extends React.Component {
 
   state = {
-    showName: '',
     bandName: '', 
     venueName: '',
-    location: '',
+    state: '',
+    city: '',
     genre: ''
   }
   
@@ -21,29 +20,47 @@ class Show extends React.Component {
     this.props.fetchShows(); 
   }
 
-  renderShows = () => {
-    if(this.props.shows) {
-      return this.props.shows.map(show => {
-        return (
-          <div key={show.show.name}>
-            <ShowContainer show={show.show} bands={show.bands} venue={show.venue}/>
-          </div>
-        )
-      })
-    }
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value})
   }
 
+  showShows = () => {
+    let filtered = [...this.props.shows];
+    if( this.state.bandName || this.state.venueName || this.state.genre || this.state.city || this.state.state) {
+      filtered = filtered.filter(show => {
+        const bands = show.bands.map(band => band.name).join(" ").toLowerCase()
+        const genre = show.bands.map(band => band.genre).join(" ").toLowerCase()
+        const venue = show.venue.name.toLowerCase() 
+        const state = show.venue.state.toLowerCase()
+        const city = show.venue.city.toLowerCase()
+        if(
+          (bands.includes(this.state.bandName.toLowerCase())) && 
+          (genre.includes(this.state.genre.toLowerCase())) && 
+          (venue.includes(this.state.venueName.toLowerCase())) && 
+          (state.includes(this.state.state.toLocaleLowerCase())) && 
+          (city.includes(this.state.city.toLowerCase()))
+        ){
+          return show
+        }
+      })
+
+    }
+    return filtered.map(show => (
+      <div key={show.show.id}>
+        <ShowContainer bands={show.bands} show={show.show} venue={show.venue}/>
+      </div>))
+  } 
+
   render() {
+    console.log(this.props.shows)
     return (
       <div className="background scroll" id="showShows">
         <NavBar />
-        <div className="center" style={{marginTop: "60px"}}>
-          <div className="translucent center">
-            <h1>All Shows</h1>
-          </div>
+        <div className="center">
+          <Filter filter={this.handleChange} />
         </div>
         <div className="flex">
-          {this.renderShows()}
+          {this.showShows()}
         </div>
       </div>
     )
