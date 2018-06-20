@@ -73,6 +73,11 @@ h1 {
   width: 100%;
   text-align: left;
 }
+.stack1{
+  width: 50%;
+  display:block;
+  margin-top: 15px;
+}
 img {
   width: 350px;
   height: 250px;
@@ -165,7 +170,7 @@ img {
 }
 
 .react-date-picker__calendar-button.react-date-picker__button__icon,
-.react-date-picker__clear-button.react-date-picker__button__icon{
+.react-date-picker__clear-button.react-date-picker__button__icon {
   background: rgb(0, 134, 179);
 }
 .react-calendar div{
@@ -177,3 +182,14 @@ img {
 .react-calendar button{
   color: rgb(0, 134, 179);
 }
+
+.noMarginTop {
+  margin-top: 1px;
+  padding-top: 1px;
+}
+.noMarginBottom {
+  margin-bottom: 1px;
+}
+
+
+

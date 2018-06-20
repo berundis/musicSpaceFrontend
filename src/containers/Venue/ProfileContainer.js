@@ -35,7 +35,7 @@ class ProfileContainer extends React.Component {
               <h3 className="stack"><div className="title">Location</div> {this.props.venue.city}, {this.props.venue.state}</h3>
               <h3 className="stack"><div className="title">Genres</div> {this.props.venue.genres}</h3>
               <h3 className="stack"><div className="title">Description</div> {this.props.venue.description}</h3>
-              <h3 className="stack"><div className="title">Contact</div> {this.props.venue.email}</h3>
+              <a className="stack1" style={{backgroundColor: "rgb(0, 134, 179)", marginLeft: "20%"}} href={`mailto:${this.props.venue.email}`}>{this.props.venue.email}</a>
             </div>
             <div className="four">
               {this.props.bar}

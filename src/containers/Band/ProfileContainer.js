@@ -39,14 +39,14 @@ class ProfileContainer extends React.Component {
                 <h3 className="stack"><div className="title">Location</div> {this.props.band.city}, {this.props.band.state}</h3>
                 <h3 className="stack"><div className="title">Genre</div> {this.props.band.genre}</h3>
                 <h3 className="stack"><div className="title">Bio</div> {this.props.band.bio}</h3>
-                <h3 className="stack"><div className="title">Contact</div> {this.props.band.email}</h3>
+                <a className="stack1" style={{backgroundColor: "rgb(0, 134, 179)", marginLeft: "20%"}} href={`mailto:${this.props.band.email}`}>{this.props.band.email}</a>
               </div>
               <div className="four">
                 {this.props.bar}
               </div>
             </div>
           </div>
-          <div className="center">
+          <div className="center noMarginBottom">
             <div className="translucent maxwidth">
               <div className="wrapper">
                 <div className="two"><input onClick={this.click} type="submit" value={this.state.text}/></div>
@@ -54,7 +54,7 @@ class ProfileContainer extends React.Component {
             </div>
           </div>  
           <br/><br/>
-          <div className="flex">
+          <div className="flex noMarginTop">
             {this.displayShows()}
           </div>
           <br/>
