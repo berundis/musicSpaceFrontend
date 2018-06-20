@@ -159,3 +159,21 @@ img {
 .header {
   color: rgb(199,21,133);
 }
+
+.react-date-picker__button__input__input{
+  color: white;
+}
+
+.react-date-picker__calendar-button.react-date-picker__button__icon,
+.react-date-picker__clear-button.react-date-picker__button__icon{
+  background: rgb(0, 134, 179);
+}
+.react-calendar div{
+  color: rgb(55,55,55);
+}
+.react-calendar__tile.react-calendar__month-view__days__day{
+  color:rgb(199,21,133); 
+}
+.react-calendar button{
+  color: rgb(0, 134, 179);
+}

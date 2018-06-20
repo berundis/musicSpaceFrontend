@@ -54,13 +54,25 @@ class CreateShow extends React.Component {
 
   submit = (e) => {
     e.preventDefault();
-    this.setState({date: this.state.date.toDateString()}, this.props.createShow(this.state))
+    const obj = {
+      name: this.state.name,
+      venue_id: this.state.venue_id,
+      flyer: this.state.flyer,
+      band_ids: this.state.band_ids,
+      date: this.state.date.toDateString()
+    }
+    this.props.createShow(obj)
     this.setState({done: true})
   }
 
   render() {
     if(this.state.done){
-      return <Redirect to="/shows" />
+      if(localStorage.getItem('profile_type') === "band"){
+        return <Redirect to="/band" />
+      } else if(localStorage.getItem('profile_type') === "venue"){
+        return <Redirect to="/venue" />
+      }
+      
     }
     console.log(this.state.date)
     return (
@@ -77,7 +89,7 @@ class CreateShow extends React.Component {
               <input type="text" name="flyer" value={this.state.flyer} onChange={this.handleChange}/>
             </form>
             
-            <div className="translucent">
+            <div className="translucent white">
               <label>Date</label><br/><br/>
               <DatePicker onChange={this.handleDate} value={this.state.date}/>
             </div>
