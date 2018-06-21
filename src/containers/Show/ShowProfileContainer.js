@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteShow } from '../../actions/showActions';
 
+
 class ShowProfileContainer extends React.Component {
 
   state = {
@@ -32,7 +33,6 @@ class ShowProfileContainer extends React.Component {
       return <button onClick={this.deleteShow}>Delete Show</button>
     }
   }
-  
 
   render() {
     if (this.state.delete){

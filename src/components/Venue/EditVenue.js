@@ -43,7 +43,7 @@ class EditVenue extends React.Component {
       return <Redirect to="/venue"/>
     }
     return (
-      <div className="background scroll">
+      <div className="background scroll" id="editVenue">
         <NavBar />
         <div className="center">
           <div className="translucent outerFormDiv">

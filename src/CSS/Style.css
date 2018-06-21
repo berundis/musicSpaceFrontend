@@ -12,6 +12,9 @@
 .scroll {
   overflow: auto;
 }
+.home {
+  background-color: rgba(199,21,133,0.6);
+}
 input {
   width: 100%;
   padding: 12px 20px;

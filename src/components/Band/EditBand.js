@@ -43,7 +43,7 @@ class EditBand extends React.Component {
       return <Redirect to="/band"/>
     }
     return (
-      <div className="background scroll">
+      <div className="background scroll" id="editBand">
         <NavBar />
         <div className="center">
           <div className="translucent outerFormDiv">

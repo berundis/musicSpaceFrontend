@@ -76,7 +76,7 @@ class CreateShow extends React.Component {
     }
     console.log(this.state.date)
     return (
-      <div className="background scroll">
+      <div className="background scroll" id="createShow">
         <NavBar />
         <div className="center">
           <div className="translucent outerFormDiv">

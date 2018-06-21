@@ -1,5 +1,6 @@
 import React from 'react'
 import VenueShows from '../../components/Venue/VenueShows';
+import NavBar from '../NavBar';
 
 class ProfileContainer extends React.Component {
 
@@ -26,7 +27,8 @@ class ProfileContainer extends React.Component {
 
   render() {
     return (
-      <div className="center">
+      <div className="center background scroll" id="venueProfile">
+        <NavBar />
         <div className="translucent outer">
           <div className="wrapper">
             <div className="one"><img className="translucent bar" alt={this.props.venue.name} src={this.props.venue.profile_img}/></div>

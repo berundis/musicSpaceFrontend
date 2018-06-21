@@ -51,6 +51,10 @@ class Routes extends React.Component {
       } else if(json.token && json.profile_type === "venue"){
         callback('/venue')
       } else {
+        localStorage.removeItem('token')
+        localStorage.removeItem('user_id')
+        localStorage.removeItem('profile_type')
+        alert("Invalid Login!")
         callback('/login')
       }   
     })

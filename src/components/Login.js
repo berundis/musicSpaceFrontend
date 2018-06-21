@@ -48,3 +48,28 @@ export default class Login extends Component {
   }
 }
 
+
+      // <div className="background scroll" id="login">
+      //   <NavBar />
+      //   <div className="center">
+      //     <div className="translucent outerFormDiv">
+      //       <h1>Login</h1>
+      //       <div className="center">
+      //         <br/><br/>
+      //         <form onSubmit={this.handleSubmit}>
+      //           <div>
+      //             <label htmlFor="email">Email</label>
+      //             <input type="text" name="email" onChange={this.handleChange} value={this.state.email}/> 
+      //           </div>
+      //           <br/>
+      //           <div>
+      //             <label htmlFor="password">Password</label>
+      //             <input type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
+      //           </div>
+      //           <br/>
+      //           <input type="submit" value="Submit"/>
+      //         </form>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>
