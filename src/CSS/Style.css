@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inconsolata', monospace;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+.hover:hover {
+  background-color: rgba(11,11,11,0.9)
+}
+
+.center {
+  text-align: center;
+}
+
+.translucent {
+   background-color: rgba(10, 10, 10,0.7);
+   display: inline-block;
+   margin: 1em auto;
+   padding: 20px;
+   border-radius: 10px;
+}
+.scroll {
+  overflow: auto;
+}
+.home {
+  background-color: rgba(199,21,133,0.6);
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  border-radius: 10px;
+}
+
+input:focus {
+  border: 3px solid #555;
+}
+input[type=button], input[type=submit]{
+  background-color: rgba(199,21,133,0.8);
+  border: none;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type=submit]:hover {
+  background-color: rgba(255,105,180,0.8);
+}
+
+button {
+  background-color: rgba(199,21,133,0.8);
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 3px;
+  padding: 7px;
+  margin-right: 10px;
+}
+h1 {
+  margin: 5px;
+}
+
+.outerFormDiv {
+  margin-top: 80px;
+  width: 60%;
+}
+.outer {
+  margin-top: 70px;
+}
+
+.formDiv{
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 40px;
+}
+
+.stack{
+  width: 100%;
+  text-align: left;
+}
+.stack1{
+  width: 50%;
+  display:block;
+  margin-top: 15px;
+}
+img {
+  width: 350px;
+  height: 250px;
+}
+.maxwidth {
+  width: 41%;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.one {
+  grid-column:1;
+  grid-row: 2/5;
+}
+.two {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+.three {
+  grid-column: 2;
+  grid-row: 2/5;
+}
+.four {
+  grid-column: 1/3;
+}
+
+
+.bar{
+  margin: 0;
+}
+.bar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bar a {
+  background-color: rgba(199,21,133,0.8);
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.bar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.margin {
+  margin-left: 40px;
+}
+.setWidth{
+  max-width:400px;
+  min-width:300px;
+  min-height: 250px;
+  margin: auto;
+}
+
+.setContainer {
+  max-width: 350px;
+  min-width: 200px;
+  margin: 20px;
+}
+.title {
+  color: rgb(0, 134, 179);
+  font-size: 25px;
+  display: inline;
+}
+
+.header {
+  color: rgb(199,21,133);
+}
+
+.react-date-picker__button__input__input{
+  color: white;
+}
+
+.react-date-picker__calendar-button.react-date-picker__button__icon,
+.react-date-picker__clear-button.react-date-picker__button__icon {
+  background: rgb(0, 134, 179);
+}
+.react-calendar div{
+  color: rgb(55,55,55);
+}
+.react-calendar__tile.react-calendar__month-view__days__day{
+  color:rgb(199,21,133);
+}
+.react-calendar button{
+  color: rgb(0, 134, 179);
+}
+
+.noMarginTop {
+  margin-top: 1px;
+  padding-top: 1px;
+}
+.noMarginBottom {
+  margin-bottom: 1px;
+}
