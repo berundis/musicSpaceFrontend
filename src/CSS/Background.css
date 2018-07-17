@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* body {
   background: url("https://images.pexels.com/photos/167579/pexels-photo-167579.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -17,6 +18,19 @@
 
 #home{
   background: url("http://www.ssgmusic.com/wp-content/uploads/2013/04/Tera-Melos.jpg") no-repeat center center fixed; 
+=======
+.background{
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#home{
+  background: url("http://www.ssgmusic.com/wp-content/uploads/2013/04/Tera-Melos.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -24,7 +38,11 @@
 }
 
 #login{
+<<<<<<< HEAD
   background: url("http://synthvibrations.files.wordpress.com/2009/07/roland_system-1001.jpg") no-repeat center center fixed; 
+=======
+  background: url("http://synthvibrations.files.wordpress.com/2009/07/roland_system-1001.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -32,23 +50,41 @@
 }
 
 #bandRegister{
+<<<<<<< HEAD
   background: url("https://static1.squarespace.com/static/579784fdebbd1ab78e904b09/57978bc046c3c4d83d8b581b/57978bdfb3db2b4ccf4c6118/1469925560949/%C2%A9JustinBorucki+-+AtTheDriveIn.jpg?format=1500w") no-repeat center center fixed; 
+=======
+  background: url("https://static1.squarespace.com/static/579784fdebbd1ab78e904b09/57978bc046c3c4d83d8b581b/57978bdfb3db2b4ccf4c6118/1469925560949/%C2%A9JustinBorucki+-+AtTheDriveIn.jpg?format=1500w") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+<<<<<<< HEAD
 } 
 
 #venueRegister{
   background: url("http://www.plantingseedsrecords.com/images/newsphotos/DanKeith40Watt.jpg") no-repeat center center fixed; 
+=======
+}
+
+#venueRegister{
+  background: url("http://www.plantingseedsrecords.com/images/newsphotos/DanKeith40Watt.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+<<<<<<< HEAD
 } 
 
 #showBands{
   background: url("http://www.glassbutterbeach.com/wp-content/uploads/2015/05/Vinyl_collection.jpg") no-repeat center center fixed; 
+=======
+}
+
+#showBands{
+  background: url("http://www.glassbutterbeach.com/wp-content/uploads/2015/05/Vinyl_collection.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -56,7 +92,11 @@
 }
 
 #showVenues{
+<<<<<<< HEAD
   background: url("http://www.self-titledmag.com/wp-content/uploads/2012/02/Siouxsie-and-the-banshees-100-Club.jpg") no-repeat center center fixed; 
+=======
+  background: url("http://www.self-titledmag.com/wp-content/uploads/2012/02/Siouxsie-and-the-banshees-100-Club.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -64,7 +104,11 @@
 }
 
 #showShows{
+<<<<<<< HEAD
   background: url("https://flashbak.com/wp-content/uploads/2017/06/batcave-metors.jpg") no-repeat center center fixed; 
+=======
+  background: url("https://flashbak.com/wp-content/uploads/2017/06/batcave-metors.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -72,7 +116,11 @@
 }
 
 #bandProfile{
+<<<<<<< HEAD
   background: url("https://i.pinimg.com/originals/6c/f0/2b/6cf02b2d171382490551a066dca6518e.jpg") no-repeat center center fixed; 
+=======
+  background: url("https://i.pinimg.com/originals/6c/f0/2b/6cf02b2d171382490551a066dca6518e.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -80,7 +128,11 @@
 }
 
 #venueProfile{
+<<<<<<< HEAD
   background: url("http://greenroom-radio.com/wp-content/uploads/2016/04/cbgb.jpg") no-repeat center center fixed; 
+=======
+  background: url("http://greenroom-radio.com/wp-content/uploads/2016/04/cbgb.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -88,7 +140,11 @@
 }
 
 #editBand{
+<<<<<<< HEAD
   background: url("https://i.ytimg.com/vi/fMD10eFxZlY/maxresdefault.jpg") no-repeat center center fixed; 
+=======
+  background: url("https://i.ytimg.com/vi/fMD10eFxZlY/maxresdefault.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -96,16 +152,28 @@
 }
 
 #editVenue{
+<<<<<<< HEAD
   background: url("http://greenroom-radio.com/wp-content/uploads/2016/04/wall-of-death-city-gardens.jpg") no-repeat center center fixed; 
+=======
+  background: url("http://greenroom-radio.com/wp-content/uploads/2016/04/wall-of-death-city-gardens.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 #createShow{
+<<<<<<< HEAD
   background: url("https://www.kiwiaudio.com/wp-content/grand-media/image/KiwiAudio-RecordingConsole-min.jpg") no-repeat center center fixed; 
+=======
+  background: url("https://www.kiwiaudio.com/wp-content/grand-media/image/KiwiAudio-RecordingConsole-min.jpg") no-repeat center center fixed;
+>>>>>>> redux
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> redux

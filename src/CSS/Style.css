@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+=======
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inconsolata', monospace;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+.hover:hover {
+  background-color: rgba(11,11,11,0.9)
+}
+
+>>>>>>> redux
 .center {
   text-align: center;
 }
@@ -36,8 +54,13 @@ input[type=button], input[type=submit]{
   color: white;
   font-size: 15px;
   text-decoration: none;
+<<<<<<< HEAD
   margin: 4px 2px; 
   cursor: pointer; 
+=======
+  margin: 4px 2px;
+  cursor: pointer;
+>>>>>>> redux
   border-radius: 10px;
 }
 
@@ -180,7 +203,11 @@ img {
   color: rgb(55,55,55);
 }
 .react-calendar__tile.react-calendar__month-view__days__day{
+<<<<<<< HEAD
   color:rgb(199,21,133); 
+=======
+  color:rgb(199,21,133);
+>>>>>>> redux
 }
 .react-calendar button{
   color: rgb(0, 134, 179);
@@ -193,6 +220,9 @@ img {
 .noMarginBottom {
   margin-bottom: 1px;
 }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> redux
