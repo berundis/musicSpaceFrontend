@@ -20,14 +20,6 @@ export class App extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    return (   
-      <Router>
-        <div>
-          <Routes />
-        </div>
-      </Router>
-=======
     return (
       <div className='App'>
         <Router>
@@ -36,7 +28,6 @@ export class App extends Component {
           </div>
         </Router>
       </div>
->>>>>>> redux
     );
   }
 }

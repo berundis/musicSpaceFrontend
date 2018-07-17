@@ -53,29 +53,9 @@ export const deleteBand = (id) => (dispatch) => {
     method: 'DELETE',
   })
   .then(res => res.json())
-<<<<<<< HEAD
-  .then( band => dispatch({
-    type: EDIT_BAND, 
-    payload: band
-  })).then( band => console.log("EDIT", band))
-}
-
-export const deleteBand = (id) => (dispatch) =>{
-  fetch( `http://localhost:3000/api/v1/bands/${id}`,{
-    method: 'DELETE',
-  })
-  .then(res => res.json())
-  .then(band => {
-    return dispatch({
-      type: DELETE_BAND,
-      payload: id
-  })})
-}
-=======
   .then(band => {
     return dispatch({
       type: DELETE_BAND,
       payload: band.bandId
   })})
 }
->>>>>>> redux

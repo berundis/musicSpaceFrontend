@@ -21,16 +21,12 @@ export const createShow = (showData) => (dispatch) => {
   .then(show => dispatch({
     type: NEW_SHOW,
     payload: show
-  })).then(console.log)
+  }))
 }
 
 export const editShow = (showData) => (dispatch) => {
   fetch(`http://localhost:3000/api/v1/shows/${showData.id}`, {
-<<<<<<< HEAD
-    method: 'PATCH', 
-=======
     method: 'PATCH',
->>>>>>> redux
     headers: {
       'content-type': 'application/json'
     },
@@ -38,13 +34,9 @@ export const editShow = (showData) => (dispatch) => {
   })
   .then(res => res.json())
   .then( show => dispatch({
-<<<<<<< HEAD
-    type: EDIT_SHOW, 
-=======
     type: EDIT_SHOW,
->>>>>>> redux
     payload: show
-  })).then( show => console.log("EDIT", show))
+  }))
 }
 
 export const deleteShow = (id) => (dispatch) =>{
@@ -57,8 +49,4 @@ export const deleteShow = (id) => (dispatch) =>{
       type: DELETE_SHOW,
       payload: id
   })})
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> redux
