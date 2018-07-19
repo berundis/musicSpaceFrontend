@@ -10,7 +10,6 @@ export const fetchVenues = () => (dispatch) => {
 }
 
 export const createVenue = (venueData) => (dispatch) => {
-  console.log('post action')
   fetch('http://localhost:3000/api/v1/venues',{
     method:'POST',
     headers: {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { editVenue } from '../actions/venueActions'
+import { fetchShows } from '../actions/showActions'
 import PropTypes from 'prop-types'
 import { Redirect} from 'react-router-dom'
 import Navbar from '../Navbar'
@@ -85,7 +86,10 @@ EditVenue.propTypes = {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {editVenue: bindActionCreators(editVenue, dispatch)}
+  return bindActionCreators({
+    editVenue: editVenue,
+    fetchShows: fetchShows
+  }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(EditVenue);

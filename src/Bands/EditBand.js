@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { editBand } from '../actions/bandActions'
+import { fetchShows } from '../actions/showActions'
 import PropTypes from 'prop-types'
 import { Redirect} from 'react-router-dom'
 import Navbar from '../Navbar'
@@ -32,14 +33,13 @@ class EditBand extends React.Component {
         bandData[value] = this.state[value]
       }
     })
-    console.log(bandData)
     this.props.editBand(bandData);
+    this.props.fetchShows()
 
     this.setState({ done: true })
   }
 
   render() {
-    console.log(this.props)
     if (this.state.done) {
       return <Redirect to="/profile"/>
     }
@@ -86,7 +86,10 @@ EditBand.propTypes = {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {editBand: bindActionCreators(editBand, dispatch)}
+  return bindActionCreators({
+    editBand: editBand,
+    fetchShows: fetchShows
+  }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(EditBand);
