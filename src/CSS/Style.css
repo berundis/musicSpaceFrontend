@@ -103,6 +103,7 @@ img {
 .maxwidth {
   width: 41%;
 }
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -31,3 +31,12 @@ Then the Front-End can run in any local port
 ```
 npm install && npm start
 ```
+
+## ScreenShots
+
+Profile 1.A
+![Profile A](https://i.imgur.com/vPq677L.png)
+Profile 1.B
+![Profile B](https://i.imgur.com/ZVp0qYi.png)
+Bands Index
+![Bands](https://i.imgur.com/L3AlDv8.png)
