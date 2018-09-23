@@ -4,7 +4,7 @@
 
 ## About
 
-MusicSpace is a Band/Venue social network web-app that intends to solve the problem that musicians without managers or representation face when planing an event or tour.
+MusicSpace is a Band/Venue social network web-app that intends to solve the problem that musicians without managers or representation face when planning an event or tour.
 
 This app is for educational proposes and all the data it contains is seeded and fake.
 
